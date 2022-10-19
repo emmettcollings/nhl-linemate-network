@@ -10,42 +10,26 @@ from numpy import int64
 
 # Read all skater players from skaters.csv files
 dirname = os.path.dirname(__file__)
-Skaters_path = os.path.join(dirname, '../data/skaters/')
-all_files = glob.glob(Skaters_path + "*.csv")
 
-Skaterslst = []
-
-for filename in all_files:
-    df = pd.read_csv(filename, index_col='playerId', header=0)
-    df.drop('season', axis=1)
-    Skaterslst.append(df)
-
-skatersdf = pd.concat(Skaterslst, axis=0, ignore_index=True)
-skatersdf.to_csv('../data/skaters/totalSkaters.csv')
-
+skater_file = os.path.join(dirname, '../data/skaters/21-22_skaters.csv')
+skaters_df = pd.read_csv(skater_file, index_col='playerId', header=0)
 
 # Find players that played on 5-on-5 basis
-situation = skatersdf[skatersdf['situation'] == '5on5']
+situation = skaters_df[skaters_df['situation'] == '5on5']
 skaters5on5 = pd.DataFrame(situation)
 
+skaters5on5.to_csv('../data/skaters/5on5.csv')
 
-# Extract players Ids in order to use them for similar name/lastname
-df = pd.concat([skaters5on5["name"], skaters5on5["playerId"]], axis=1)
-skatersdf_5on5 = df.drop_duplicates("playerId")
+# # Extract players Ids in order to use them for similar name/lastname
+# skaters_df = pd.concat([skaters5on5["name"], skaters5on5["playerId"]], axis=1)
+# skatersdf_5on5 = skaters_df.drop_duplicates("playerId")
 
 
 # for each node find all lines they played on
 # Read all lines from Lines.csv files
-linePath = os.path.join(dirname, '../data/lines/')
-line_files = glob.glob(linePath + "*.csv")
+line_file = os.path.join(dirname, '../data/lines/21-22_lines.csv')
 
-Lineslst = []
-
-for filename in line_files:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    Lineslst.append(df)
-
-linedf = pd.concat(Lineslst, axis=0, ignore_index=True)
+lines_df = pd.read_csv(line_file, index_col=None, header=0)
 
 
 # Seperate lineID each player so we can replace the lastname of players with their full name
@@ -53,13 +37,16 @@ N = 7
 
 
 def split_string(x): return pd.Series(
-    [x[i:i+N] for i in range(0, 21, N)])
+    [str(x)[i:i+N] for i in range(0, len(str(x)), N)])
 
 
-new_var = linedf['lineId'].apply(split_string).fillna('')
+new_var = lines_df['lineId'].apply(split_string).fillna('')
 new_var.columns = 'playerId' + (new_var.columns + 1).astype(str).str.zfill(1)
-linedf = linedf.join(new_var)
-linesdf = linedf.copy(deep=True)
+linedf = lines_df.join(new_var)
+linesdf = lines_df.copy(deep=True)
+
+print(linedf)
+print(linesdf)
 
 # Replace the lastname of players with their full name
 linesdf.rename(columns={'playerId1': 'playerId'}, inplace=True)
