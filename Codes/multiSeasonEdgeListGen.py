@@ -165,7 +165,7 @@ def calculate_corsi_influence_pair(line_row):
 # calculate influence players have on their partners
 corsi_influence = pairings_df.apply(calculate_corsi_influence_pair, axis=1)
 corsi_influence.columns = [
-    'corsi_influence_on_player2', 'corsi_influence_on_player_1']
+    'corsi_influence_on_player1', 'corsi_influence_on_player2']
 corsi_pairings_df = pairings_df.join(corsi_influence)
 
 
