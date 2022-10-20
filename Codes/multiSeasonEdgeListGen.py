@@ -118,6 +118,12 @@ split_ids = lines_df.index.to_series().apply(
 split_ids.columns = 'playerId' + \
     (split_ids.columns + 1).astype(str).str.zfill(1)
 lines_df = lines_df.join(split_ids)
+
+# add full player names
+lines_df['player1Name'] = lines_df.apply(
+    lambda x: skaters_df.loc[int(x.playerId1)].playerName, axis=1)
+lines_df['player2Name'] = lines_df.apply(
+    lambda x: skaters_df.loc[int(x.playerId2)].playerName, axis=1)
 print(lines_df)
 lines_df.to_csv('../data/aggregate_lines.csv')
 
