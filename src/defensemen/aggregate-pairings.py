@@ -70,11 +70,12 @@ split_ids.columns = 'playerId' + \
 pairings_df = pairings_df.join(split_ids)
 
 # add full player names
-defensemen_file = os.path.join(dirname, '../data/aggregate_defensemen.csv')
+defensemen_file = os.path.join(
+    dirname, '../data/defense/aggregate_defensemen.csv')
 defensemen_df = pd.read_csv(defensemen_file, index_col='playerId', header=0)
 pairings_df['player1Name'] = pairings_df.apply(
     lambda x: defensemen_df.loc[int(x.playerId1)].playerName, axis=1)
 pairings_df['player2Name'] = pairings_df.apply(
     lambda x: defensemen_df.loc[int(x.playerId2)].playerName, axis=1)
 print(pairings_df)
-pairings_df.to_csv('../data/aggregate_pairings.csv')
+pairings_df.to_csv('../data/defense/aggregate_pairings.csv')

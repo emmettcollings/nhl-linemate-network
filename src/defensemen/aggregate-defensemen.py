@@ -59,4 +59,4 @@ for file in skaters_files:
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
 
 print(skaters_df)
-skaters_df.to_csv('../data/aggregate_defensemen.csv')
+skaters_df.to_csv('../data/defense/aggregate_defensemen.csv')
