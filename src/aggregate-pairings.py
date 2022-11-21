@@ -18,7 +18,7 @@ def format_lines_df(df):
     pairings = df[df['position'] == 'pairing']
     df = pd.DataFrame(pairings)
     df = df.drop(
-        columns=['season', 'team', 'situation'])
+        columns=['season', 'iceTimeRank', 'team', 'situation'])
     df = df.rename(columns={'name': 'playerNames'})
     return df
 
