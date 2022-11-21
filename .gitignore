@@ -463,3 +463,4 @@ cython_debug/
 
 # customs
 *.lock
+*#
