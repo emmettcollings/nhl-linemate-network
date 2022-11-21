@@ -7,7 +7,7 @@ from numpy import int64
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
 
-skaters_dir = os.path.join(dirname, '../data/skaters/')
+skaters_dir = os.path.join(dirname, '../../data/skaters/')
 skaters_files = glob.glob(skaters_dir + '*.csv')
 
 
@@ -24,7 +24,7 @@ def format_skater_df(df):
 
 
 # aggregate skater data over our time period
-skater_file = os.path.join(dirname, '../data/skaters/21-22_skaters.csv')
+skater_file = os.path.join(dirname, '../../data/skaters/21-22_skaters.csv')
 skaters_files.remove(skater_file)
 skaters_df = pd.read_csv(skater_file, index_col='playerId', header=0)
 skaters_df = format_skater_df(skaters_df)
@@ -59,4 +59,6 @@ for file in skaters_files:
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
 
 print(skaters_df)
-skaters_df.to_csv('../data/aggregate_forwards.csv')
+output_file = os.path.join(
+    dirname, '../../data/forwards/aggregate_forwards.csv')
+skaters_df.to_csv(output_file)
