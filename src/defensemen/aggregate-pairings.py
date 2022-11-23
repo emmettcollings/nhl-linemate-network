@@ -44,7 +44,12 @@ def add_line_data(line_row):
 
         updated_row.games_played += line_row.games_played
         updated_row.icetime += line_row.icetime
+        # corsi
         updated_row.corsiPercentage = updated_cfp
+        # goals for
+        updated_row.goalsFor += line_row.goalsFor
+        # d zone giveaways
+        updated_row.dZoneGiveawaysFor += line_row.dZoneGiveawaysFor
     else:
         updated_row = line_row
     return updated_row
@@ -56,6 +61,9 @@ for file in lines_files:
     updated_df = df.apply(add_line_data, axis=1)
     pairings_df = pd.concat([pairings_df, updated_df])
     pairings_df = pairings_df[~pairings_df.index.duplicated(keep='last')]
+
+# drop any lines that have less than 100 minutes (6000s) of icetime
+pairings_df = pairings_df.drop(pairings_df[pairings_df.icetime < 6000].index)
 
 
 # Separate lineId into playerIds
@@ -77,6 +85,13 @@ pairings_df['player1Name'] = pairings_df.apply(
     lambda x: defensemen_df.loc[int(x.playerId1)].playerName, axis=1)
 pairings_df['player2Name'] = pairings_df.apply(
     lambda x: defensemen_df.loc[int(x.playerId2)].playerName, axis=1)
+
+# compute per 60 of stats we are interested in
+pairings_df['goalsFor_per60'] = pairings_df.apply(
+    lambda row: (row.goalsFor / row.icetime) * 60 * 60, axis=1)
+pairings_df['dZoneGiveaways_per60'] = pairings_df.apply(
+    lambda row: (row.dZoneGiveawaysFor / row.icetime) * 60 * 60, axis=1)
+
 print(pairings_df)
 
 output_file = os.path.join(
