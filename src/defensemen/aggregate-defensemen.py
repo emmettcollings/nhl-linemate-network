@@ -57,6 +57,7 @@ def add_player_data(player_row):
         updated_row.games_played += player_row.games_played
         updated_row.icetime += player_row.icetime
         updated_row.timeOnBench += player_row.timeOnBench
+        # corsi on and off ice
         updated_row.onIce_corsiPercentage = updated_on_ice_corsi
         updated_row.offIce_corsiPercentage = updated_off_ice_corsi
         # on ice goals for
@@ -75,6 +76,22 @@ for file in skaters_files:
     updated_df = df.apply(add_player_data, axis=1)
     skaters_df = pd.concat([skaters_df, updated_df])
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
+
+# compute some new stats that may be of use to us
+# Difference in team corsi when player is on. Conceptually seems indicative of
+# a player being much better than their teammates or otherwise important to the
+# team's success
+skaters_df['on_off_corsi_diff'] = skaters_df.apply(
+    lambda row: row.onIce_corsiPercentage - row.offIce_corsiPercentage, axis=1)
+
+# Team goals for per 60
+skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
+    lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1)
+
+# D zone giveaways per 60
+skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_dZoneGiveaways / row.icetime) * 60 * 60, axis=1)
+
 
 print(skaters_df)
 output_file = os.path.join(
