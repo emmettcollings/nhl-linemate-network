@@ -69,6 +69,8 @@ split_ids.columns = 'playerId' + \
     (split_ids.columns + 1).astype(str).str.zfill(1)
 lines_df = lines_df.join(split_ids)
 
+# Some lines are incorrectly formatted. They all have quite small samples so
+# I think it's fine to just remove them
 invalid_line = lines_df[lines_df['playerId3'] != '']
 lines_df = pd.DataFrame(invalid_line)
 

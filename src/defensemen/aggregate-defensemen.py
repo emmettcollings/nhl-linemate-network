@@ -37,15 +37,33 @@ def add_player_data(player_row):
     id = player_row.name
     if player_row.name in skaters_df.index:
         updated_row = skaters_df.loc[id]
+
+        # use for updating stats expressed as percentages
         total_icetime = updated_row.icetime + player_row.icetime
-        updated_cfp = player_row.onIce_corsiPercentage * \
+        total_timeOnBench = updated_row.timeOnBench + player_row.timeOnBench
+
+        # on ice corsi percentage
+        updated_on_ice_corsi = player_row.onIce_corsiPercentage * \
             (player_row.icetime / total_icetime) + \
             updated_row.onIce_corsiPercentage * \
             (updated_row.icetime / total_icetime)
 
+        # off ice corsi percentage
+        updated_off_ice_corsi = player_row.offIce_corsiPercentage * \
+            (player_row.timeOnBench / total_timeOnBench) + \
+            updated_row.offIce_corsiPercentage * \
+            (updated_row.timeOnBench / total_timeOnBench)
+
         updated_row.games_played += player_row.games_played
         updated_row.icetime += player_row.icetime
-        updated_row.onIce_corsiPercentage = updated_cfp
+        updated_row.timeOnBench += player_row.timeOnBench
+        updated_row.onIce_corsiPercentage = updated_on_ice_corsi
+        updated_row.offIce_corsiPercentage = updated_off_ice_corsi
+        # on ice goals for
+        updated_row.OnIce_F_goals += player_row.OnIce_F_goals
+        # individual d zone giveaways
+        updated_row.I_F_dZoneGiveaways += player_row.I_F_dZoneGiveaways
+
     else:
         updated_row = player_row
     return updated_row
