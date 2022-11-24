@@ -94,6 +94,15 @@ skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
 
 
 print(skaters_df)
+print(skaters_df['onIce_corsiPercentage'].mean())
+print(skaters_df['onIce_corsiPercentage'].std())
+print(skaters_df['offIce_corsiPercentage'].mean())
+print(skaters_df['offIce_corsiPercentage'].std())
+print(skaters_df['OnIce_F_goals_per60'].mean())
+print(skaters_df['OnIce_F_goals_per60'].std())
+print(skaters_df['I_F_dZoneGiveaways_per60'].mean())
+print(skaters_df['I_F_dZoneGiveaways_per60'].std())
+
 output_file = os.path.join(
     dirname, '../../data/defense/aggregate_defensemen.csv')
 skaters_df.to_csv(output_file)
