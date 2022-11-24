@@ -33,14 +33,14 @@ def calculate_corsi_influence_pair(line_row):
     p2_cfp_without = (p2_cfp - line_cfp * p2_time_with_prop) / \
         p2_time_without_prop
 
-    p1_inf_p2 = float(line_cfp - p2_cfp_without)
-    p2_inf_p1 = float(line_cfp - p1_cfp_without)
+    p2_inf_p1 = float(line_cfp - p2_cfp_without)
+    p1_inf_p2 = float(line_cfp - p1_cfp_without)
 
     # if the influence is negligible we replace with 0 to avoid clutter
-    if (abs(p1_inf_p2) < 1e-10):
-        p1_inf_p2 = 0
     if (abs(p2_inf_p1) < 1e-10):
         p2_inf_p1 = 0
+    if (abs(p1_inf_p2) < 1e-10):
+        p1_inf_p2 = 0
     return pd.Series([p1_inf_p2, p2_inf_p1])
 
 
@@ -53,6 +53,16 @@ corsi_influence = pairings_df.apply(calculate_corsi_influence_pair, axis=1)
 corsi_influence.columns = [
     'corsi_influence_on_player1', 'corsi_influence_on_player2']
 corsi_pairings_df = pairings_df.join(corsi_influence)
+
+corsi_stdDev = defensemen_df['onIce_corsiPercentage'].std()
+corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
+    lambda row: row.corsi_influence_on_player1 / corsi_stdDev, axis=1)
+corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
+    lambda row: row.corsi_influence_on_player2 / corsi_stdDev, axis=1)
+
+
+print(corsi_pairings_df['corsi_influence_on_player1'].mean())
+print(corsi_pairings_df['corsi_influence_on_player1'].std())
 
 # save in new csv
 output_file = os.path.join(
