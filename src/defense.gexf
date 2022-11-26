@@ -4,328 +4,1615 @@
     <creator>NetworkX 2.8.6</creator>
   </meta>
   <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="playerName" type="string" />
+    </attributes>
     <nodes>
-      <node id="8475825" label="8475825" />
-      <node id="8476902" label="8476902" />
-      <node id="8473446" label="8473446" />
-      <node id="8477073" label="8477073" />
-      <node id="8475796" label="8475796" />
-      <node id="8477462" label="8477462" />
-      <node id="8479998" label="8479998" />
-      <node id="8481600" label="8481600" />
-      <node id="8475181" label="8475181" />
-      <node id="8481542" label="8481542" />
-      <node id="8475227" label="8475227" />
-      <node id="8479348" label="8479348" />
-      <node id="8474697" label="8474697" />
-      <node id="8479026" label="8479026" />
-      <node id="8480196" label="8480196" />
-      <node id="8474207" label="8474207" />
-      <node id="8479458" label="8479458" />
-      <node id="8476853" label="8476853" />
-      <node id="8480043" label="8480043" />
-      <node id="8474031" label="8474031" />
-      <node id="8480001" label="8480001" />
-      <node id="8474567" label="8474567" />
-      <node id="8479984" label="8479984" />
-      <node id="8471274" label="8471274" />
-      <node id="8474818" label="8474818" />
-      <node id="8474013" label="8474013" />
-      <node id="8477950" label="8477950" />
-      <node id="8475690" label="8475690" />
-      <node id="8478430" label="8478430" />
-      <node id="8476854" label="8476854" />
-      <node id="8479325" label="8479325" />
-      <node id="8477018" label="8477018" />
-      <node id="8479639" label="8479639" />
-      <node id="8477845" label="8477845" />
-      <node id="8479482" label="8479482" />
-      <node id="8480434" label="8480434" />
-      <node id="8482142" label="8482142" />
-      <node id="8470281" label="8470281" />
-      <node id="8480803" label="8480803" />
-      <node id="8474145" label="8474145" />
-      <node id="8480157" label="8480157" />
-      <node id="8475177" label="8475177" />
-      <node id="8478452" label="8478452" />
-      <node id="8477495" label="8477495" />
-      <node id="8475455" label="8475455" />
-      <node id="8479378" label="8479378" />
-      <node id="8476850" label="8476850" />
-      <node id="8475762" label="8475762" />
-      <node id="8474565" label="8474565" />
-      <node id="8477034" label="8477034" />
-      <node id="8480847" label="8480847" />
-      <node id="8477986" label="8477986" />
-      <node id="8479523" label="8479523" />
-      <node id="8475197" label="8475197" />
-      <node id="8476967" label="8476967" />
-      <node id="8476879" label="8476879" />
-      <node id="8477498" label="8477498" />
-      <node id="8478460" label="8478460" />
-      <node id="8479369" label="8479369" />
-      <node id="8478882" label="8478882" />
-      <node id="8479402" label="8479402" />
-      <node id="8474602" label="8474602" />
-      <node id="8475625" label="8475625" />
-      <node id="8476473" label="8476473" />
-      <node id="8470966" label="8470966" />
-      <node id="8477369" label="8477369" />
-      <node id="8470613" label="8470613" />
-      <node id="8478136" label="8478136" />
-      <node id="8475750" label="8475750" />
-      <node id="8480884" label="8480884" />
-      <node id="8478055" label="8478055" />
-      <node id="8478840" label="8478840" />
-      <node id="8479945" label="8479945" />
-      <node id="8480871" label="8480871" />
-      <node id="8474056" label="8474056" />
-      <node id="8478399" label="8478399" />
-      <node id="8477506" label="8477506" />
-      <node id="8480222" label="8480222" />
-      <node id="8475179" label="8475179" />
-      <node id="8476463" label="8476463" />
-      <node id="8470600" label="8470600" />
-      <node id="8475906" label="8475906" />
-      <node id="8478970" label="8478970" />
-      <node id="8480145" label="8480145" />
-      <node id="8477938" label="8477938" />
-      <node id="8478468" label="8478468" />
-      <node id="8471284" label="8471284" />
-      <node id="8478469" label="8478469" />
-      <node id="8481575" label="8481575" />
-      <node id="8477499" label="8477499" />
-      <node id="8477948" label="8477948" />
-      <node id="8476457" label="8476457" />
-      <node id="8477851" label="8477851" />
-      <node id="8480184" label="8480184" />
-      <node id="8478476" label="8478476" />
-      <node id="8481609" label="8481609" />
-      <node id="8480049" label="8480049" />
-      <node id="8476467" label="8476467" />
-      <node id="8478567" label="8478567" />
-      <node id="8477220" label="8477220" />
-      <node id="8475233" label="8475233" />
-      <node id="8475279" label="8475279" />
-      <node id="8477507" label="8477507" />
-      <node id="8471873" label="8471873" />
-      <node id="8479388" label="8479388" />
-      <node id="8480950" label="8480950" />
-      <node id="8476958" label="8476958" />
-      <node id="8475324" label="8475324" />
-      <node id="8479425" label="8479425" />
-      <node id="8478407" label="8478407" />
-      <node id="8476906" label="8476906" />
-      <node id="8471303" label="8471303" />
-      <node id="8478911" label="8478911" />
-      <node id="8477359" label="8477359" />
-      <node id="8480800" label="8480800" />
-      <node id="8475747" label="8475747" />
-      <node id="8480878" label="8480878" />
-      <node id="8476931" label="8476931" />
-      <node id="8475790" label="8475790" />
-      <node id="8476779" label="8476779" />
-      <node id="8477335" label="8477335" />
-      <node id="8476312" label="8476312" />
-      <node id="8479398" label="8479398" />
-      <node id="8474590" label="8474590" />
-      <node id="8480796" label="8480796" />
-      <node id="8477810" label="8477810" />
-      <node id="8482655" label="8482655" />
-      <node id="8471677" label="8471677" />
-      <node id="8475753" label="8475753" />
-      <node id="8476923" label="8476923" />
-      <node id="8477435" label="8477435" />
-      <node id="8481581" label="8481581" />
-      <node id="8479976" label="8479976" />
-      <node id="8465009" label="8465009" />
-      <node id="8474578" label="8474578" />
-      <node id="8471735" label="8471735" />
-      <node id="8476372" label="8476372" />
-      <node id="8478062" label="8478062" />
-      <node id="8480831" label="8480831" />
-      <node id="8474716" label="8474716" />
-      <node id="8481014" label="8481014" />
-      <node id="8474090" label="8474090" />
-      <node id="8478451" label="8478451" />
-      <node id="8476979" label="8476979" />
-      <node id="8476462" label="8476462" />
-      <node id="8480883" label="8480883" />
-      <node id="8480839" label="8480839" />
-      <node id="8480807" label="8480807" />
-      <node id="8478013" label="8478013" />
-      <node id="8482245" label="8482245" />
-      <node id="8477205" label="8477205" />
-      <node id="8479372" label="8479372" />
-      <node id="8479578" label="8479578" />
-      <node id="8472382" label="8472382" />
-      <node id="8480071" label="8480071" />
-      <node id="8471709" label="8471709" />
-      <node id="8481461" label="8481461" />
-      <node id="8477355" label="8477355" />
-      <node id="8474612" label="8474612" />
-      <node id="8480036" label="8480036" />
-      <node id="8478506" label="8478506" />
-      <node id="8475246" label="8475246" />
-      <node id="8479345" label="8479345" />
-      <node id="8478443" label="8478443" />
-      <node id="8479421" label="8479421" />
-      <node id="8479341" label="8479341" />
-      <node id="8480727" label="8480727" />
-      <node id="8480865" label="8480865" />
-      <node id="8480035" label="8480035" />
-      <node id="8482671" label="8482671" />
-      <node id="8476874" label="8476874" />
-      <node id="8481606" label="8481606" />
-      <node id="8477365" label="8477365" />
-      <node id="8480069" label="8480069" />
-      <node id="8482073" label="8482073" />
-      <node id="8477215" label="8477215" />
-      <node id="8474151" label="8474151" />
-      <node id="8474574" label="8474574" />
-      <node id="8475171" label="8475171" />
-      <node id="8477504" label="8477504" />
-      <node id="8480860" label="8480860" />
-      <node id="8481122" label="8481122" />
-      <node id="8478500" label="8478500" />
-      <node id="8481546" label="8481546" />
-      <node id="8474568" label="8474568" />
-      <node id="8478408" label="8478408" />
-      <node id="8477384" label="8477384" />
-      <node id="8480073" label="8480073" />
-      <node id="8478467" label="8478467" />
-      <node id="8476856" label="8476856" />
-      <node id="8477244" label="8477244" />
-      <node id="8478017" label="8478017" />
-      <node id="8474584" label="8474584" />
-      <node id="8477346" label="8477346" />
-      <node id="8474563" label="8474563" />
-      <node id="8481524" label="8481524" />
-      <node id="8476875" label="8476875" />
-      <node id="8476792" label="8476792" />
-      <node id="8481812" label="8481812" />
-      <node id="8478038" label="8478038" />
-      <node id="8477447" label="8477447" />
-      <node id="8471724" label="8471724" />
-      <node id="8475222" label="8475222" />
-      <node id="8479376" label="8479376" />
-      <node id="8470642" label="8470642" />
-      <node id="8476441" label="8476441" />
-      <node id="8474600" label="8474600" />
-      <node id="8478851" label="8478851" />
-      <node id="8479355" label="8479355" />
-      <node id="8478396" label="8478396" />
-      <node id="8476892" label="8476892" />
-      <node id="8478859" label="8478859" />
-      <node id="8474618" label="8474618" />
-      <node id="8476917" label="8476917" />
-      <node id="8476422" label="8476422" />
-      <node id="8474162" label="8474162" />
-      <node id="8474673" label="8474673" />
-      <node id="8479323" label="8479323" />
-      <node id="8480817" label="8480817" />
-      <node id="8478491" label="8478491" />
-      <node id="8480070" label="8480070" />
-      <node id="8476988" label="8476988" />
-      <node id="8479602" label="8479602" />
-      <node id="8482247" label="8482247" />
-      <node id="8476470" label="8476470" />
-      <node id="8480058" label="8480058" />
-      <node id="8471686" label="8471686" />
-      <node id="8476191" label="8476191" />
-      <node id="8478415" label="8478415" />
-      <node id="8476331" label="8476331" />
-      <node id="8479980" label="8479980" />
-      <node id="8475218" label="8475218" />
-      <node id="8475188" label="8475188" />
-      <node id="8475462" label="8475462" />
-      <node id="8478906" label="8478906" />
-      <node id="8477969" label="8477969" />
-      <node id="8476886" label="8476886" />
-      <node id="8475764" label="8475764" />
-      <node id="8479410" label="8479410" />
-      <node id="8476300" label="8476300" />
-      <node id="8476525" label="8476525" />
-      <node id="8471729" label="8471729" />
-      <node id="8479333" label="8479333" />
-      <node id="8481708" label="8481708" />
-      <node id="8473507" label="8473507" />
-      <node id="8478507" label="8478507" />
-      <node id="8480336" label="8480336" />
-      <node id="8475200" label="8475200" />
-      <node id="8477043" label="8477043" />
-      <node id="8471769" label="8471769" />
-      <node id="8474218" label="8474218" />
-      <node id="8476869" label="8476869" />
-      <node id="8477488" label="8477488" />
-      <node id="8478397" label="8478397" />
-      <node id="8477433" label="8477433" />
-      <node id="8479371" label="8479371" />
-      <node id="8474166" label="8474166" />
-      <node id="8479439" label="8479439" />
-      <node id="8480814" label="8480814" />
-      <node id="8475167" label="8475167" />
-      <node id="8474628" label="8474628" />
-      <node id="8479442" label="8479442" />
-      <node id="8475718" label="8475718" />
-      <node id="8476885" label="8476885" />
-      <node id="8480467" label="8480467" />
-      <node id="8477046" label="8477046" />
-      <node id="8475716" label="8475716" />
-      <node id="8475841" label="8475841" />
-      <node id="8479983" label="8479983" />
-      <node id="8476449" label="8476449" />
-      <node id="8470187" label="8470187" />
-      <node id="8475208" label="8475208" />
-      <node id="8476429" label="8476429" />
-      <node id="8475868" label="8475868" />
-      <node id="8475176" label="8475176" />
-      <node id="8470607" label="8470607" />
-      <node id="8474027" label="8474027" />
-      <node id="8468674" label="8468674" />
-      <node id="8476472" label="8476472" />
-      <node id="8480873" label="8480873" />
-      <node id="8469465" label="8469465" />
-      <node id="8474134" label="8474134" />
-      <node id="8475730" label="8475730" />
-      <node id="8474604" label="8474604" />
-      <node id="8479985" label="8479985" />
-      <node id="8471392" label="8471392" />
-      <node id="8480940" label="8480940" />
-      <node id="8478416" label="8478416" />
-      <node id="8477541" label="8477541" />
-      <node id="8468493" label="8468493" />
-      <node id="8478425" label="8478425" />
-      <node id="8476166" label="8476166" />
-      <node id="8476941" label="8476941" />
-      <node id="8477509" label="8477509" />
-      <node id="8476807" label="8476807" />
-      <node id="8474581" label="8474581" />
-      <node id="8474688" label="8474688" />
-      <node id="8477932" label="8477932" />
-      <node id="8474579" label="8474579" />
-      <node id="8471242" label="8471242" />
-      <node id="8470110" label="8470110" />
-      <node id="8471702" label="8471702" />
-      <node id="8473560" label="8473560" />
-      <node id="8480172" label="8480172" />
-      <node id="8476891" label="8476891" />
-      <node id="8479324" label="8479324" />
-      <node id="8480160" label="8480160" />
-      <node id="8480945" label="8480945" />
-      <node id="8473415" label="8473415" />
-      <node id="8479395" label="8479395" />
-      <node id="8475797" label="8475797" />
-      <node id="8478021" label="8478021" />
-      <node id="8477474" label="8477474" />
-      <node id="8480147" label="8480147" />
-      <node id="8470151" label="8470151" />
-      <node id="8475186" label="8475186" />
-      <node id="8481572" label="8481572" />
-      <node id="8474125" label="8474125" />
-      <node id="8470601" label="8470601" />
-      <node id="8478915" label="8478915" />
-      <node id="8479982" label="8479982" />
+      <node id="8475825" label="8475825">
+        <attvalues>
+          <attvalue for="0" value="Jani Hakanpaa" />
+        </attvalues>
+      </node>
+      <node id="8476902" label="8476902">
+        <attvalues>
+          <attvalue for="0" value="Esa Lindell" />
+        </attvalues>
+      </node>
+      <node id="8473446" label="8473446">
+        <attvalues>
+          <attvalue for="0" value="Erik Johnson" />
+        </attvalues>
+      </node>
+      <node id="8477073" label="8477073">
+        <attvalues>
+          <attvalue for="0" value="Kurtis MacDermid" />
+        </attvalues>
+      </node>
+      <node id="8475796" label="8475796">
+        <attvalues>
+          <attvalue for="0" value="Mark Pysyk" />
+        </attvalues>
+      </node>
+      <node id="8477462" label="8477462">
+        <attvalues>
+          <attvalue for="0" value="Robert Hagg" />
+        </attvalues>
+      </node>
+      <node id="8479998" label="8479998">
+        <attvalues>
+          <attvalue for="0" value="Mikey Anderson" />
+        </attvalues>
+      </node>
+      <node id="8481600" label="8481600">
+        <attvalues>
+          <attvalue for="0" value="Tobias Bjornfot" />
+        </attvalues>
+      </node>
+      <node id="8475181" label="8475181">
+        <attvalues>
+          <attvalue for="0" value="Nick Leddy" />
+        </attvalues>
+      </node>
+      <node id="8481542" label="8481542">
+        <attvalues>
+          <attvalue for="0" value="Moritz Seider" />
+        </attvalues>
+      </node>
+      <node id="8475227" label="8475227">
+        <attvalues>
+          <attvalue for="0" value="Chris Wideman" />
+        </attvalues>
+      </node>
+      <node id="8479348" label="8479348">
+        <attvalues>
+          <attvalue for="0" value="Kale Clague" />
+        </attvalues>
+      </node>
+      <node id="8474697" label="8474697">
+        <attvalues>
+          <attvalue for="0" value="Mark Borowiecki" />
+        </attvalues>
+      </node>
+      <node id="8479026" label="8479026">
+        <attvalues>
+          <attvalue for="0" value="Philippe Myers" />
+        </attvalues>
+      </node>
+      <node id="8480196" label="8480196">
+        <attvalues>
+          <attvalue for="0" value="Jacob Bryson" />
+        </attvalues>
+      </node>
+      <node id="8474207" label="8474207">
+        <attvalues>
+          <attvalue for="0" value="Nick Holden" />
+        </attvalues>
+      </node>
+      <node id="8479458" label="8479458">
+        <attvalues>
+          <attvalue for="0" value="Nikita Zaitsev" />
+        </attvalues>
+      </node>
+      <node id="8476853" label="8476853">
+        <attvalues>
+          <attvalue for="0" value="Morgan Rielly" />
+        </attvalues>
+      </node>
+      <node id="8480043" label="8480043">
+        <attvalues>
+          <attvalue for="0" value="Timothy Liljegren" />
+        </attvalues>
+      </node>
+      <node id="8474031" label="8474031">
+        <attvalues>
+          <attvalue for="0" value="Kevin Shattenkirk" />
+        </attvalues>
+      </node>
+      <node id="8480001" label="8480001">
+        <attvalues>
+          <attvalue for="0" value="Urho Vaakanainen" />
+        </attvalues>
+      </node>
+      <node id="8474567" label="8474567">
+        <attvalues>
+          <attvalue for="0" value="Zach Bogosian" />
+        </attvalues>
+      </node>
+      <node id="8479984" label="8479984">
+        <attvalues>
+          <attvalue for="0" value="Cal Foote" />
+        </attvalues>
+      </node>
+      <node id="8471274" label="8471274">
+        <attvalues>
+          <attvalue for="0" value="Alex Goligoski" />
+        </attvalues>
+      </node>
+      <node id="8474818" label="8474818">
+        <attvalues>
+          <attvalue for="0" value="Jordie Benn" />
+        </attvalues>
+      </node>
+      <node id="8474013" label="8474013">
+        <attvalues>
+          <attvalue for="0" value="Ian Cole" />
+        </attvalues>
+      </node>
+      <node id="8477950" label="8477950">
+        <attvalues>
+          <attvalue for="0" value="Tony DeAngelo" />
+        </attvalues>
+      </node>
+      <node id="8475690" label="8475690">
+        <attvalues>
+          <attvalue for="0" value="Christopher Tanev" />
+        </attvalues>
+      </node>
+      <node id="8478430" label="8478430">
+        <attvalues>
+          <attvalue for="0" value="Oliver Kylington" />
+        </attvalues>
+      </node>
+      <node id="8476854" label="8476854">
+        <attvalues>
+          <attvalue for="0" value="Hampus Lindholm" />
+        </attvalues>
+      </node>
+      <node id="8479325" label="8479325">
+        <attvalues>
+          <attvalue for="0" value="Charlie McAvoy" />
+        </attvalues>
+      </node>
+      <node id="8477018" label="8477018">
+        <attvalues>
+          <attvalue for="0" value="Ben Hutton" />
+        </attvalues>
+      </node>
+      <node id="8479639" label="8479639">
+        <attvalues>
+          <attvalue for="0" value="Dylan Coghlan" />
+        </attvalues>
+      </node>
+      <node id="8477845" label="8477845">
+        <attvalues>
+          <attvalue for="0" value="Trevor van Riemsdyk" />
+        </attvalues>
+      </node>
+      <node id="8479482" label="8479482">
+        <attvalues>
+          <attvalue for="0" value="Michal Kempny" />
+        </attvalues>
+      </node>
+      <node id="8480434" label="8480434">
+        <attvalues>
+          <attvalue for="0" value="Sean Durzi" />
+        </attvalues>
+      </node>
+      <node id="8482142" label="8482142">
+        <attvalues>
+          <attvalue for="0" value="Jamie Drysdale" />
+        </attvalues>
+      </node>
+      <node id="8470281" label="8470281">
+        <attvalues>
+          <attvalue for="0" value="Duncan Keith" />
+        </attvalues>
+      </node>
+      <node id="8480803" label="8480803">
+        <attvalues>
+          <attvalue for="0" value="Evan Bouchard" />
+        </attvalues>
+      </node>
+      <node id="8474145" label="8474145">
+        <attvalues>
+          <attvalue for="0" value="Robert Bortuzzo" />
+        </attvalues>
+      </node>
+      <node id="8480157" label="8480157">
+        <attvalues>
+          <attvalue for="0" value="Calle Rosen" />
+        </attvalues>
+      </node>
+      <node id="8475177" label="8475177">
+        <attvalues>
+          <attvalue for="0" value="Calvin de Haan" />
+        </attvalues>
+      </node>
+      <node id="8478452" label="8478452">
+        <attvalues>
+          <attvalue for="0" value="Caleb Jones" />
+        </attvalues>
+      </node>
+      <node id="8477495" label="8477495">
+        <attvalues>
+          <attvalue for="0" value="Seth Jones" />
+        </attvalues>
+      </node>
+      <node id="8475455" label="8475455">
+        <attvalues>
+          <attvalue for="0" value="Brenden Dillon" />
+        </attvalues>
+      </node>
+      <node id="8479378" label="8479378">
+        <attvalues>
+          <attvalue for="0" value="Logan Stanley" />
+        </attvalues>
+      </node>
+      <node id="8476850" label="8476850">
+        <attvalues>
+          <attvalue for="0" value="Ryan Murray" />
+        </attvalues>
+      </node>
+      <node id="8475762" label="8475762">
+        <attvalues>
+          <attvalue for="0" value="Derek Forbort" />
+        </attvalues>
+      </node>
+      <node id="8474565" label="8474565">
+        <attvalues>
+          <attvalue for="0" value="Alex Pietrangelo" />
+        </attvalues>
+      </node>
+      <node id="8477034" label="8477034">
+        <attvalues>
+          <attvalue for="0" value="Jaycob Megna" />
+        </attvalues>
+      </node>
+      <node id="8480847" label="8480847">
+        <attvalues>
+          <attvalue for="0" value="Ryan Merkley" />
+        </attvalues>
+      </node>
+      <node id="8477986" label="8477986">
+        <attvalues>
+          <attvalue for="0" value="Brandon Montour" />
+        </attvalues>
+      </node>
+      <node id="8479523" label="8479523">
+        <attvalues>
+          <attvalue for="0" value="Lucas Carlsson" />
+        </attvalues>
+      </node>
+      <node id="8475197" label="8475197">
+        <attvalues>
+          <attvalue for="0" value="Tyson Barrie" />
+        </attvalues>
+      </node>
+      <node id="8476967" label="8476967">
+        <attvalues>
+          <attvalue for="0" value="Brett Kulak" />
+        </attvalues>
+      </node>
+      <node id="8476879" label="8476879">
+        <attvalues>
+          <attvalue for="0" value="Cody Ceci" />
+        </attvalues>
+      </node>
+      <node id="8477498" label="8477498">
+        <attvalues>
+          <attvalue for="0" value="Darnell Nurse" />
+        </attvalues>
+      </node>
+      <node id="8478460" label="8478460">
+        <attvalues>
+          <attvalue for="0" value="Zach Werenski" />
+        </attvalues>
+      </node>
+      <node id="8479369" label="8479369">
+        <attvalues>
+          <attvalue for="0" value="Andrew Peeke" />
+        </attvalues>
+      </node>
+      <node id="8478882" label="8478882">
+        <attvalues>
+          <attvalue for="0" value="Vladislav Gavrikov" />
+        </attvalues>
+      </node>
+      <node id="8479402" label="8479402">
+        <attvalues>
+          <attvalue for="0" value="Jake Bean" />
+        </attvalues>
+      </node>
+      <node id="8474602" label="8474602">
+        <attvalues>
+          <attvalue for="0" value="Justin Schultz" />
+        </attvalues>
+      </node>
+      <node id="8475625" label="8475625">
+        <attvalues>
+          <attvalue for="0" value="Matt Irwin" />
+        </attvalues>
+      </node>
+      <node id="8476473" label="8476473">
+        <attvalues>
+          <attvalue for="0" value="Connor Murphy" />
+        </attvalues>
+      </node>
+      <node id="8470966" label="8470966">
+        <attvalues>
+          <attvalue for="0" value="Mark Giordano" />
+        </attvalues>
+      </node>
+      <node id="8477369" label="8477369">
+        <attvalues>
+          <attvalue for="0" value="Carson Soucy" />
+        </attvalues>
+      </node>
+      <node id="8470613" label="8470613">
+        <attvalues>
+          <attvalue for="0" value="Brent Burns" />
+        </attvalues>
+      </node>
+      <node id="8478136" label="8478136">
+        <attvalues>
+          <attvalue for="0" value="Jacob Middleton" />
+        </attvalues>
+      </node>
+      <node id="8475750" label="8475750">
+        <attvalues>
+          <attvalue for="0" value="Jon Merrill" />
+        </attvalues>
+      </node>
+      <node id="8480884" label="8480884">
+        <attvalues>
+          <attvalue for="0" value="Calen Addison" />
+        </attvalues>
+      </node>
+      <node id="8478055" label="8478055">
+        <attvalues>
+          <attvalue for="0" value="Gustav Forsling" />
+        </attvalues>
+      </node>
+      <node id="8478840" label="8478840">
+        <attvalues>
+          <attvalue for="0" value="Will Borgen" />
+        </attvalues>
+      </node>
+      <node id="8479945" label="8479945">
+        <attvalues>
+          <attvalue for="0" value="Gavin Bayreuther" />
+        </attvalues>
+      </node>
+      <node id="8480871" label="8480871">
+        <attvalues>
+          <attvalue for="0" value="Adam Boqvist" />
+        </attvalues>
+      </node>
+      <node id="8474056" label="8474056">
+        <attvalues>
+          <attvalue for="0" value="P.K. Subban" />
+        </attvalues>
+      </node>
+      <node id="8478399" label="8478399">
+        <attvalues>
+          <attvalue for="0" value="Jonas Siegenthaler" />
+        </attvalues>
+      </node>
+      <node id="8477506" label="8477506">
+        <attvalues>
+          <attvalue for="0" value="Ryan Pulock" />
+        </attvalues>
+      </node>
+      <node id="8480222" label="8480222">
+        <attvalues>
+          <attvalue for="0" value="Sebastian Aho" />
+        </attvalues>
+      </node>
+      <node id="8475179" label="8475179">
+        <attvalues>
+          <attvalue for="0" value="Dmitry Kulikov" />
+        </attvalues>
+      </node>
+      <node id="8476463" label="8476463">
+        <attvalues>
+          <attvalue for="0" value="Jonas Brodin" />
+        </attvalues>
+      </node>
+      <node id="8470600" label="8470600">
+        <attvalues>
+          <attvalue for="0" value="Ryan Suter" />
+        </attvalues>
+      </node>
+      <node id="8475906" label="8475906">
+        <attvalues>
+          <attvalue for="0" value="John Klingberg" />
+        </attvalues>
+      </node>
+      <node id="8478970" label="8478970">
+        <attvalues>
+          <attvalue for="0" value="Jalen Chatfield" />
+        </attvalues>
+      </node>
+      <node id="8480145" label="8480145">
+        <attvalues>
+          <attvalue for="0" value="Neal Pionk" />
+        </attvalues>
+      </node>
+      <node id="8477938" label="8477938">
+        <attvalues>
+          <attvalue for="0" value="Haydn Fleury" />
+        </attvalues>
+      </node>
+      <node id="8478468" label="8478468">
+        <attvalues>
+          <attvalue for="0" value="Jeremy Lauzon" />
+        </attvalues>
+      </node>
+      <node id="8471284" label="8471284">
+        <attvalues>
+          <attvalue for="0" value="Andrej Sekera" />
+        </attvalues>
+      </node>
+      <node id="8478469" label="8478469">
+        <attvalues>
+          <attvalue for="0" value="Thomas Chabot" />
+        </attvalues>
+      </node>
+      <node id="8481575" label="8481575">
+        <attvalues>
+          <attvalue for="0" value="Lassi Thomson" />
+        </attvalues>
+      </node>
+      <node id="8477499" label="8477499">
+        <attvalues>
+          <attvalue for="0" value="Rasmus Ristolainen" />
+        </attvalues>
+      </node>
+      <node id="8477948" label="8477948">
+        <attvalues>
+          <attvalue for="0" value="Travis Sanheim" />
+        </attvalues>
+      </node>
+      <node id="8476457" label="8476457">
+        <attvalues>
+          <attvalue for="0" value="Adam Larsson" />
+        </attvalues>
+      </node>
+      <node id="8477851" label="8477851">
+        <attvalues>
+          <attvalue for="0" value="Jordan Oesterle" />
+        </attvalues>
+      </node>
+      <node id="8480184" label="8480184">
+        <attvalues>
+          <attvalue for="0" value="Gustav Lindstrom" />
+        </attvalues>
+      </node>
+      <node id="8478476" label="8478476">
+        <attvalues>
+          <attvalue for="0" value="Kyle Capobianco" />
+        </attvalues>
+      </node>
+      <node id="8481609" label="8481609">
+        <attvalues>
+          <attvalue for="0" value="Vladislav Kolyachonok" />
+        </attvalues>
+      </node>
+      <node id="8480049" label="8480049">
+        <attvalues>
+          <attvalue for="0" value="Dylan Samberg" />
+        </attvalues>
+      </node>
+      <node id="8476467" label="8476467">
+        <attvalues>
+          <attvalue for="0" value="Jamie Oleksiak" />
+        </attvalues>
+      </node>
+      <node id="8478567" label="8478567">
+        <attvalues>
+          <attvalue for="0" value="Dean Kukan" />
+        </attvalues>
+      </node>
+      <node id="8477220" label="8477220">
+        <attvalues>
+          <attvalue for="0" value="Nate Schmidt" />
+        </attvalues>
+      </node>
+      <node id="8475233" label="8475233">
+        <attvalues>
+          <attvalue for="0" value="David Savard" />
+        </attvalues>
+      </node>
+      <node id="8475279" label="8475279">
+        <attvalues>
+          <attvalue for="0" value="Ben Chiarot" />
+        </attvalues>
+      </node>
+      <node id="8477507" label="8477507">
+        <attvalues>
+          <attvalue for="0" value="Nikita Zadorov" />
+        </attvalues>
+      </node>
+      <node id="8471873" label="8471873">
+        <attvalues>
+          <attvalue for="0" value="Anton Stralman" />
+        </attvalues>
+      </node>
+      <node id="8479388" label="8479388">
+        <attvalues>
+          <attvalue for="0" value="Riley Stillman" />
+        </attvalues>
+      </node>
+      <node id="8480950" label="8480950">
+        <attvalues>
+          <attvalue for="0" value="Ilya Lyubushkin" />
+        </attvalues>
+      </node>
+      <node id="8476958" label="8476958">
+        <attvalues>
+          <attvalue for="0" value="Jaccob Slavin" />
+        </attvalues>
+      </node>
+      <node id="8475324" label="8475324">
+        <attvalues>
+          <attvalue for="0" value="Nick Jensen" />
+        </attvalues>
+      </node>
+      <node id="8479425" label="8479425">
+        <attvalues>
+          <attvalue for="0" value="Filip Hronek" />
+        </attvalues>
+      </node>
+      <node id="8478407" label="8478407">
+        <attvalues>
+          <attvalue for="0" value="Vince Dunn" />
+        </attvalues>
+      </node>
+      <node id="8476906" label="8476906">
+        <attvalues>
+          <attvalue for="0" value="Shayne Gostisbehere" />
+        </attvalues>
+      </node>
+      <node id="8471303" label="8471303">
+        <attvalues>
+          <attvalue for="0" value="Alexander Edler" />
+        </attvalues>
+      </node>
+      <node id="8478911" label="8478911">
+        <attvalues>
+          <attvalue for="0" value="Matt Roy" />
+        </attvalues>
+      </node>
+      <node id="8477359" label="8477359">
+        <attvalues>
+          <attvalue for="0" value="Tucker Poolman" />
+        </attvalues>
+      </node>
+      <node id="8480800" label="8480800">
+        <attvalues>
+          <attvalue for="0" value="Quinn Hughes" />
+        </attvalues>
+      </node>
+      <node id="8475747" label="8475747">
+        <attvalues>
+          <attvalue for="0" value="Patrik Nemeth" />
+        </attvalues>
+      </node>
+      <node id="8480878" label="8480878">
+        <attvalues>
+          <attvalue for="0" value="Nils Lundkvist" />
+        </attvalues>
+      </node>
+      <node id="8476931" label="8476931">
+        <attvalues>
+          <attvalue for="0" value="Jake McCabe" />
+        </attvalues>
+      </node>
+      <node id="8475790" label="8475790">
+        <attvalues>
+          <attvalue for="0" value="Erik Gudbranson" />
+        </attvalues>
+      </node>
+      <node id="8476779" label="8476779">
+        <attvalues>
+          <attvalue for="0" value="Brad Hunt" />
+        </attvalues>
+      </node>
+      <node id="8477335" label="8477335">
+        <attvalues>
+          <attvalue for="0" value="Kyle Burroughs" />
+        </attvalues>
+      </node>
+      <node id="8476312" label="8476312">
+        <attvalues>
+          <attvalue for="0" value="Josh Manson" />
+        </attvalues>
+      </node>
+      <node id="8479398" label="8479398">
+        <attvalues>
+          <attvalue for="0" value="Samuel Girard" />
+        </attvalues>
+      </node>
+      <node id="8474590" label="8474590">
+        <attvalues>
+          <attvalue for="0" value="John Carlson" />
+        </attvalues>
+      </node>
+      <node id="8480796" label="8480796">
+        <attvalues>
+          <attvalue for="0" value="Martin Fehervary" />
+        </attvalues>
+      </node>
+      <node id="8477810" label="8477810">
+        <attvalues>
+          <attvalue for="0" value="Joel Hanley" />
+        </attvalues>
+      </node>
+      <node id="8482655" label="8482655">
+        <attvalues>
+          <attvalue for="0" value="J.J. Moser" />
+        </attvalues>
+      </node>
+      <node id="8471677" label="8471677">
+        <attvalues>
+          <attvalue for="0" value="Jack Johnson" />
+        </attvalues>
+      </node>
+      <node id="8475753" label="8475753">
+        <attvalues>
+          <attvalue for="0" value="Justin Faulk" />
+        </attvalues>
+      </node>
+      <node id="8476923" label="8476923">
+        <attvalues>
+          <attvalue for="0" value="Damon Severson" />
+        </attvalues>
+      </node>
+      <node id="8477435" label="8477435">
+        <attvalues>
+          <attvalue for="0" value="Ryan Graves" />
+        </attvalues>
+      </node>
+      <node id="8481581" label="8481581">
+        <attvalues>
+          <attvalue for="0" value="Thomas Harley" />
+        </attvalues>
+      </node>
+      <node id="8479976" label="8479976">
+        <attvalues>
+          <attvalue for="0" value="Juuso Valimaki" />
+        </attvalues>
+      </node>
+      <node id="8465009" label="8465009">
+        <attvalues>
+          <attvalue for="0" value="Zdeno Chara" />
+        </attvalues>
+      </node>
+      <node id="8474578" label="8474578">
+        <attvalues>
+          <attvalue for="0" value="Erik Karlsson" />
+        </attvalues>
+      </node>
+      <node id="8471735" label="8471735">
+        <attvalues>
+          <attvalue for="0" value="Keith Yandle" />
+        </attvalues>
+      </node>
+      <node id="8476372" label="8476372">
+        <attvalues>
+          <attvalue for="0" value="Nick Seeler" />
+        </attvalues>
+      </node>
+      <node id="8478062" label="8478062">
+        <attvalues>
+          <attvalue for="0" value="Dysin Mayo" />
+        </attvalues>
+      </node>
+      <node id="8480831" label="8480831">
+        <attvalues>
+          <attvalue for="0" value="Alec Regula" />
+        </attvalues>
+      </node>
+      <node id="8474716" label="8474716">
+        <attvalues>
+          <attvalue for="0" value="Jared Spurgeon" />
+        </attvalues>
+      </node>
+      <node id="8481014" label="8481014">
+        <attvalues>
+          <attvalue for="0" value="Alexander Romanov" />
+        </attvalues>
+      </node>
+      <node id="8474090" label="8474090">
+        <attvalues>
+          <attvalue for="0" value="Brendan Smith" />
+        </attvalues>
+      </node>
+      <node id="8478451" label="8478451">
+        <attvalues>
+          <attvalue for="0" value="Ethan Bear" />
+        </attvalues>
+      </node>
+      <node id="8476979" label="8476979">
+        <attvalues>
+          <attvalue for="0" value="Erik Gustafsson" />
+        </attvalues>
+      </node>
+      <node id="8476462" label="8476462">
+        <attvalues>
+          <attvalue for="0" value="Dougie Hamilton" />
+        </attvalues>
+      </node>
+      <node id="8480883" label="8480883">
+        <attvalues>
+          <attvalue for="0" value="Ty Smith" />
+        </attvalues>
+      </node>
+      <node id="8480839" label="8480839">
+        <attvalues>
+          <attvalue for="0" value="Rasmus Dahlin" />
+        </attvalues>
+      </node>
+      <node id="8480807" label="8480807">
+        <attvalues>
+          <attvalue for="0" value="Mattias Samuelsson" />
+        </attvalues>
+      </node>
+      <node id="8478013" label="8478013">
+        <attvalues>
+          <attvalue for="0" value="Jake Walman" />
+        </attvalues>
+      </node>
+      <node id="8482245" label="8482245">
+        <attvalues>
+          <attvalue for="0" value="Artem Zub" />
+        </attvalues>
+      </node>
+      <node id="8477205" label="8477205">
+        <attvalues>
+          <attvalue for="0" value="Andrej Sustr" />
+        </attvalues>
+      </node>
+      <node id="8479372" label="8479372">
+        <attvalues>
+          <attvalue for="0" value="Josh Mahura" />
+        </attvalues>
+      </node>
+      <node id="8479578" label="8479578">
+        <attvalues>
+          <attvalue for="0" value="Casey Fitzgerald" />
+        </attvalues>
+      </node>
+      <node id="8472382" label="8472382">
+        <attvalues>
+          <attvalue for="0" value="Andy Greene" />
+        </attvalues>
+      </node>
+      <node id="8480071" label="8480071">
+        <attvalues>
+          <attvalue for="0" value="Robin Salo" />
+        </attvalues>
+      </node>
+      <node id="8471709" label="8471709">
+        <attvalues>
+          <attvalue for="0" value="Marc-Edouard Vlasic" />
+        </attvalues>
+      </node>
+      <node id="8481461" label="8481461">
+        <attvalues>
+          <attvalue for="0" value="Corey Schueneman" />
+        </attvalues>
+      </node>
+      <node id="8477355" label="8477355">
+        <attvalues>
+          <attvalue for="0" value="Will Butcher" />
+        </attvalues>
+      </node>
+      <node id="8474612" label="8474612">
+        <attvalues>
+          <attvalue for="0" value="Travis Hamonic" />
+        </attvalues>
+      </node>
+      <node id="8480036" label="8480036">
+        <attvalues>
+          <attvalue for="0" value="Miro Heiskanen" />
+        </attvalues>
+      </node>
+      <node id="8478506" label="8478506">
+        <attvalues>
+          <attvalue for="0" value="Gabriel Carlsson" />
+        </attvalues>
+      </node>
+      <node id="8475246" label="8475246">
+        <attvalues>
+          <attvalue for="0" value="Kevin Connauton" />
+        </attvalues>
+      </node>
+      <node id="8479345" label="8479345">
+        <attvalues>
+          <attvalue for="0" value="Jakob Chychrun" />
+        </attvalues>
+      </node>
+      <node id="8478443" label="8478443">
+        <attvalues>
+          <attvalue for="0" value="Brandon Carlo" />
+        </attvalues>
+      </node>
+      <node id="8479421" label="8479421">
+        <attvalues>
+          <attvalue for="0" value="Jacob Moverare" />
+        </attvalues>
+      </node>
+      <node id="8479341" label="8479341">
+        <attvalues>
+          <attvalue for="0" value="Cam Dineen" />
+        </attvalues>
+      </node>
+      <node id="8480727" label="8480727">
+        <attvalues>
+          <attvalue for="0" value="Zach Whitecloud" />
+        </attvalues>
+      </node>
+      <node id="8480865" label="8480865">
+        <attvalues>
+          <attvalue for="0" value="Noah Dobson" />
+        </attvalues>
+      </node>
+      <node id="8480035" label="8480035">
+        <attvalues>
+          <attvalue for="0" value="Henri Jokiharju" />
+        </attvalues>
+      </node>
+      <node id="8482671" label="8482671">
+        <attvalues>
+          <attvalue for="0" value="Owen Power" />
+        </attvalues>
+      </node>
+      <node id="8476874" label="8476874">
+        <attvalues>
+          <attvalue for="0" value="Olli Maatta" />
+        </attvalues>
+      </node>
+      <node id="8481606" label="8481606">
+        <attvalues>
+          <attvalue for="0" value="Jordan Spence" />
+        </attvalues>
+      </node>
+      <node id="8477365" label="8477365">
+        <attvalues>
+          <attvalue for="0" value="Connor Clifton" />
+        </attvalues>
+      </node>
+      <node id="8480069" label="8480069">
+        <attvalues>
+          <attvalue for="0" value="Cale Makar" />
+        </attvalues>
+      </node>
+      <node id="8482073" label="8482073">
+        <attvalues>
+          <attvalue for="0" value="Braden Schneider" />
+        </attvalues>
+      </node>
+      <node id="8477215" label="8477215">
+        <attvalues>
+          <attvalue for="0" value="Danny DeKeyser" />
+        </attvalues>
+      </node>
+      <node id="8474151" label="8474151">
+        <attvalues>
+          <attvalue for="0" value="Ryan McDonagh" />
+        </attvalues>
+      </node>
+      <node id="8474574" label="8474574">
+        <attvalues>
+          <attvalue for="0" value="Tyler Myers" />
+        </attvalues>
+      </node>
+      <node id="8475171" label="8475171">
+        <attvalues>
+          <attvalue for="0" value="Oliver Ekman-Larsson" />
+        </attvalues>
+      </node>
+      <node id="8477504" label="8477504">
+        <attvalues>
+          <attvalue for="0" value="Josh Morrissey" />
+        </attvalues>
+      </node>
+      <node id="8480860" label="8480860">
+        <attvalues>
+          <attvalue for="0" value="Kevin Bahl" />
+        </attvalues>
+      </node>
+      <node id="8481122" label="8481122">
+        <attvalues>
+          <attvalue for="0" value="Simon Benoit" />
+        </attvalues>
+      </node>
+      <node id="8478500" label="8478500">
+        <attvalues>
+          <attvalue for="0" value="Ivan Provorov" />
+        </attvalues>
+      </node>
+      <node id="8481546" label="8481546">
+        <attvalues>
+          <attvalue for="0" value="Cam York" />
+        </attvalues>
+      </node>
+      <node id="8474568" label="8474568">
+        <attvalues>
+          <attvalue for="0" value="Luke Schenn" />
+        </attvalues>
+      </node>
+      <node id="8478408" label="8478408">
+        <attvalues>
+          <attvalue for="0" value="Travis Dermott" />
+        </attvalues>
+      </node>
+      <node id="8477384" label="8477384">
+        <attvalues>
+          <attvalue for="0" value="Josh Brown" />
+        </attvalues>
+      </node>
+      <node id="8480073" label="8480073">
+        <attvalues>
+          <attvalue for="0" value="Erik Brannstrom" />
+        </attvalues>
+      </node>
+      <node id="8478467" label="8478467">
+        <attvalues>
+          <attvalue for="0" value="Nicolas Meloche" />
+        </attvalues>
+      </node>
+      <node id="8476856" label="8476856">
+        <attvalues>
+          <attvalue for="0" value="Matt Dumba" />
+        </attvalues>
+      </node>
+      <node id="8477244" label="8477244">
+        <attvalues>
+          <attvalue for="0" value="Chad Ruhwedel" />
+        </attvalues>
+      </node>
+      <node id="8478017" label="8478017">
+        <attvalues>
+          <attvalue for="0" value="Mark Friedman" />
+        </attvalues>
+      </node>
+      <node id="8474584" label="8474584">
+        <attvalues>
+          <attvalue for="0" value="Michael Del Zotto" />
+        </attvalues>
+      </node>
+      <node id="8477346" label="8477346">
+        <attvalues>
+          <attvalue for="0" value="MacKenzie Weegar" />
+        </attvalues>
+      </node>
+      <node id="8474563" label="8474563">
+        <attvalues>
+          <attvalue for="0" value="Drew Doughty" />
+        </attvalues>
+      </node>
+      <node id="8481524" label="8481524">
+        <attvalues>
+          <attvalue for="0" value="Bowen Byram" />
+        </attvalues>
+      </node>
+      <node id="8476875" label="8476875">
+        <attvalues>
+          <attvalue for="0" value="Mike Matheson" />
+        </attvalues>
+      </node>
+      <node id="8476792" label="8476792">
+        <attvalues>
+          <attvalue for="0" value="Torey Krug" />
+        </attvalues>
+      </node>
+      <node id="8481812" label="8481812">
+        <attvalues>
+          <attvalue for="0" value="Nikolai Knyzhov" />
+        </attvalues>
+      </node>
+      <node id="8478038" label="8478038">
+        <attvalues>
+          <attvalue for="0" value="Devon Toews" />
+        </attvalues>
+      </node>
+      <node id="8477447" label="8477447">
+        <attvalues>
+          <attvalue for="0" value="Shea Theodore" />
+        </attvalues>
+      </node>
+      <node id="8471724" label="8471724">
+        <attvalues>
+          <attvalue for="0" value="Kris Letang" />
+        </attvalues>
+      </node>
+      <node id="8475222" label="8475222">
+        <attvalues>
+          <attvalue for="0" value="Sami Vatanen" />
+        </attvalues>
+      </node>
+      <node id="8479376" label="8479376">
+        <attvalues>
+          <attvalue for="0" value="Victor Mete" />
+        </attvalues>
+      </node>
+      <node id="8470642" label="8470642">
+        <attvalues>
+          <attvalue for="0" value="Shea Weber" />
+        </attvalues>
+      </node>
+      <node id="8476441" label="8476441">
+        <attvalues>
+          <attvalue for="0" value="Joel Edmundson" />
+        </attvalues>
+      </node>
+      <node id="8474600" label="8474600">
+        <attvalues>
+          <attvalue for="0" value="Roman Josi" />
+        </attvalues>
+      </node>
+      <node id="8478851" label="8478851">
+        <attvalues>
+          <attvalue for="0" value="Alexandre Carrier" />
+        </attvalues>
+      </node>
+      <node id="8479355" label="8479355">
+        <attvalues>
+          <attvalue for="0" value="Olli Juolevi" />
+        </attvalues>
+      </node>
+      <node id="8478396" label="8478396">
+        <attvalues>
+          <attvalue for="0" value="Noah Hanifin" />
+        </attvalues>
+      </node>
+      <node id="8476892" label="8476892">
+        <attvalues>
+          <attvalue for="0" value="Colton Parayko" />
+        </attvalues>
+      </node>
+      <node id="8478859" label="8478859">
+        <attvalues>
+          <attvalue for="0" value="Niko Mikkola" />
+        </attvalues>
+      </node>
+      <node id="8474618" label="8474618">
+        <attvalues>
+          <attvalue for="0" value="Marco Scandella" />
+        </attvalues>
+      </node>
+      <node id="8476917" label="8476917">
+        <attvalues>
+          <attvalue for="0" value="Adam Pelech" />
+        </attvalues>
+      </node>
+      <node id="8476422" label="8476422">
+        <attvalues>
+          <attvalue for="0" value="Mike Reilly" />
+        </attvalues>
+      </node>
+      <node id="8474162" label="8474162">
+        <attvalues>
+          <attvalue for="0" value="Jake Muzzin" />
+        </attvalues>
+      </node>
+      <node id="8474673" label="8474673">
+        <attvalues>
+          <attvalue for="0" value="TJ Brodie" />
+        </attvalues>
+      </node>
+      <node id="8479323" label="8479323">
+        <attvalues>
+          <attvalue for="0" value="Adam Fox" />
+        </attvalues>
+      </node>
+      <node id="8480817" label="8480817">
+        <attvalues>
+          <attvalue for="0" value="K'Andre Miller" />
+        </attvalues>
+      </node>
+      <node id="8478491" label="8478491">
+        <attvalues>
+          <attvalue for="0" value="Jacob Larsson" />
+        </attvalues>
+      </node>
+      <node id="8480070" label="8480070">
+        <attvalues>
+          <attvalue for="0" value="Ian Mitchell" />
+        </attvalues>
+      </node>
+      <node id="8476988" label="8476988">
+        <attvalues>
+          <attvalue for="0" value="Matt Benning" />
+        </attvalues>
+      </node>
+      <node id="8479602" label="8479602">
+        <attvalues>
+          <attvalue for="0" value="Jeremy Davies" />
+        </attvalues>
+      </node>
+      <node id="8482247" label="8482247">
+        <attvalues>
+          <attvalue for="0" value="Mikko Lehtonen" />
+        </attvalues>
+      </node>
+      <node id="8476470" label="8476470">
+        <attvalues>
+          <attvalue for="0" value="Nathan Beaulieu" />
+        </attvalues>
+      </node>
+      <node id="8480058" label="8480058">
+        <attvalues>
+          <attvalue for="0" value="Pierre-Olivier Joseph" />
+        </attvalues>
+      </node>
+      <node id="8471686" label="8471686">
+        <attvalues>
+          <attvalue for="0" value="Marc Staal" />
+        </attvalues>
+      </node>
+      <node id="8476191" label="8476191">
+        <attvalues>
+          <attvalue for="0" value="Kevan Miller" />
+        </attvalues>
+      </node>
+      <node id="8478415" label="8478415">
+        <attvalues>
+          <attvalue for="0" value="Jakub Zboril" />
+        </attvalues>
+      </node>
+      <node id="8476331" label="8476331">
+        <attvalues>
+          <attvalue for="0" value="Dylan DeMelo" />
+        </attvalues>
+      </node>
+      <node id="8479980" label="8479980">
+        <attvalues>
+          <attvalue for="0" value="Nicolas Hague" />
+        </attvalues>
+      </node>
+      <node id="8475218" label="8475218">
+        <attvalues>
+          <attvalue for="0" value="Mattias Ekholm" />
+        </attvalues>
+      </node>
+      <node id="8475188" label="8475188">
+        <attvalues>
+          <attvalue for="0" value="Brayden McNabb" />
+        </attvalues>
+      </node>
+      <node id="8475462" label="8475462">
+        <attvalues>
+          <attvalue for="0" value="Radko Gudas" />
+        </attvalues>
+      </node>
+      <node id="8478906" label="8478906">
+        <attvalues>
+          <attvalue for="0" value="Markus Nutivaara" />
+        </attvalues>
+      </node>
+      <node id="8477969" label="8477969">
+        <attvalues>
+          <attvalue for="0" value="Marcus Pettersson" />
+        </attvalues>
+      </node>
+      <node id="8476886" label="8476886">
+        <attvalues>
+          <attvalue for="0" value="Slater Koekkoek" />
+        </attvalues>
+      </node>
+      <node id="8475764" label="8475764">
+        <attvalues>
+          <attvalue for="0" value="Cam Fowler" />
+        </attvalues>
+      </node>
+      <node id="8479410" label="8479410">
+        <attvalues>
+          <attvalue for="0" value="Mikhail Sergachev" />
+        </attvalues>
+      </node>
+      <node id="8476300" label="8476300">
+        <attvalues>
+          <attvalue for="0" value="Nikita Nesterov" />
+        </attvalues>
+      </node>
+      <node id="8476525" label="8476525">
+        <attvalues>
+          <attvalue for="0" value="Colin Miller" />
+        </attvalues>
+      </node>
+      <node id="8471729" label="8471729">
+        <attvalues>
+          <attvalue for="0" value="Kris Russell" />
+        </attvalues>
+      </node>
+      <node id="8479333" label="8479333">
+        <attvalues>
+          <attvalue for="0" value="Libor Hajek" />
+        </attvalues>
+      </node>
+      <node id="8481708" label="8481708">
+        <attvalues>
+          <attvalue for="0" value="Zac Jones" />
+        </attvalues>
+      </node>
+      <node id="8473507" label="8473507">
+        <attvalues>
+          <attvalue for="0" value="Jeff Petry" />
+        </attvalues>
+      </node>
+      <node id="8478507" label="8478507">
+        <attvalues>
+          <attvalue for="0" value="John Marino" />
+        </attvalues>
+      </node>
+      <node id="8480336" label="8480336">
+        <attvalues>
+          <attvalue for="0" value="Sean Walker" />
+        </attvalues>
+      </node>
+      <node id="8475200" label="8475200">
+        <attvalues>
+          <attvalue for="0" value="Dmitry Orlov" />
+        </attvalues>
+      </node>
+      <node id="8477043" label="8477043">
+        <attvalues>
+          <attvalue for="0" value="Christian Djoos" />
+        </attvalues>
+      </node>
+      <node id="8471769" label="8471769">
+        <attvalues>
+          <attvalue for="0" value="Niklas Hjalmarsson" />
+        </attvalues>
+      </node>
+      <node id="8474218" label="8474218">
+        <attvalues>
+          <attvalue for="0" value="Jason Demers" />
+        </attvalues>
+      </node>
+      <node id="8476869" label="8476869">
+        <attvalues>
+          <attvalue for="0" value="Brady Skjei" />
+        </attvalues>
+      </node>
+      <node id="8477488" label="8477488">
+        <attvalues>
+          <attvalue for="0" value="Brett Pesce" />
+        </attvalues>
+      </node>
+      <node id="8478397" label="8478397">
+        <attvalues>
+          <attvalue for="0" value="Rasmus Andersson" />
+        </attvalues>
+      </node>
+      <node id="8477433" label="8477433">
+        <attvalues>
+          <attvalue for="0" value="Ben Harpur" />
+        </attvalues>
+      </node>
+      <node id="8479371" label="8479371">
+        <attvalues>
+          <attvalue for="0" value="Dante Fabbro" />
+        </attvalues>
+      </node>
+      <node id="8474166" label="8474166">
+        <attvalues>
+          <attvalue for="0" value="Alec Martinez" />
+        </attvalues>
+      </node>
+      <node id="8479439" label="8479439">
+        <attvalues>
+          <attvalue for="0" value="Jacob MacDonald" />
+        </attvalues>
+      </node>
+      <node id="8480814" label="8480814">
+        <attvalues>
+          <attvalue for="0" value="Nicolas Beaudin" />
+        </attvalues>
+      </node>
+      <node id="8475167" label="8475167">
+        <attvalues>
+          <attvalue for="0" value="Victor Hedman" />
+        </attvalues>
+      </node>
+      <node id="8474628" label="8474628">
+        <attvalues>
+          <attvalue for="0" value="Michael Stone" />
+        </attvalues>
+      </node>
+      <node id="8479442" label="8479442">
+        <attvalues>
+          <attvalue for="0" value="Troy Stecher" />
+        </attvalues>
+      </node>
+      <node id="8475718" label="8475718">
+        <attvalues>
+          <attvalue for="0" value="Justin Holl" />
+        </attvalues>
+      </node>
+      <node id="8476885" label="8476885">
+        <attvalues>
+          <attvalue for="0" value="Jacob Trouba" />
+        </attvalues>
+      </node>
+      <node id="8480467" label="8480467">
+        <attvalues>
+          <attvalue for="0" value="Austin Strand" />
+        </attvalues>
+      </node>
+      <node id="8477046" label="8477046">
+        <attvalues>
+          <attvalue for="0" value="Joakim Ryan" />
+        </attvalues>
+      </node>
+      <node id="8475716" label="8475716">
+        <attvalues>
+          <attvalue for="0" value="Martin Marincin" />
+        </attvalues>
+      </node>
+      <node id="8475841" label="8475841">
+        <attvalues>
+          <attvalue for="0" value="Tim Heed" />
+        </attvalues>
+      </node>
+      <node id="8479983" label="8479983">
+        <attvalues>
+          <attvalue for="0" value="Mario Ferraro" />
+        </attvalues>
+      </node>
+      <node id="8476449" label="8476449">
+        <attvalues>
+          <attvalue for="0" value="Scott Harrington" />
+        </attvalues>
+      </node>
+      <node id="8470187" label="8470187">
+        <attvalues>
+          <attvalue for="0" value="Johnny Boychuk" />
+        </attvalues>
+      </node>
+      <node id="8475208" label="8475208">
+        <attvalues>
+          <attvalue for="0" value="Brian Dumoulin" />
+        </attvalues>
+      </node>
+      <node id="8476429" label="8476429">
+        <attvalues>
+          <attvalue for="0" value="Scott Mayfield" />
+        </attvalues>
+      </node>
+      <node id="8475868" label="8475868">
+        <attvalues>
+          <attvalue for="0" value="Anthony Bitetto" />
+        </attvalues>
+      </node>
+      <node id="8475176" label="8475176">
+        <attvalues>
+          <attvalue for="0" value="Ryan Ellis" />
+        </attvalues>
+      </node>
+      <node id="8470607" label="8470607">
+        <attvalues>
+          <attvalue for="0" value="Brent Seabrook" />
+        </attvalues>
+      </node>
+      <node id="8474027" label="8474027">
+        <attvalues>
+          <attvalue for="0" value="Justin Braun" />
+        </attvalues>
+      </node>
+      <node id="8468674" label="8468674">
+        <attvalues>
+          <attvalue for="0" value="Deryk Engelland" />
+        </attvalues>
+      </node>
+      <node id="8476472" label="8476472">
+        <attvalues>
+          <attvalue for="0" value="Oscar Klefbom" />
+        </attvalues>
+      </node>
+      <node id="8480873" label="8480873">
+        <attvalues>
+          <attvalue for="0" value="Rasmus Sandin" />
+        </attvalues>
+      </node>
+      <node id="8469465" label="8469465">
+        <attvalues>
+          <attvalue for="0" value="Dan Hamhuis" />
+        </attvalues>
+      </node>
+      <node id="8474134" label="8474134">
+        <attvalues>
+          <attvalue for="0" value="Yannick Weber" />
+        </attvalues>
+      </node>
+      <node id="8475730" label="8475730">
+        <attvalues>
+          <attvalue for="0" value="Stephen Johns" />
+        </attvalues>
+      </node>
+      <node id="8474604" label="8474604">
+        <attvalues>
+          <attvalue for="0" value="Aaron Ness" />
+        </attvalues>
+      </node>
+      <node id="8479985" label="8479985">
+        <attvalues>
+          <attvalue for="0" value="Cale Fleury" />
+        </attvalues>
+      </node>
+      <node id="8471392" label="8471392">
+        <attvalues>
+          <attvalue for="0" value="Roman Polak" />
+        </attvalues>
+      </node>
+      <node id="8480940" label="8480940">
+        <attvalues>
+          <attvalue for="0" value="Joel Persson" />
+        </attvalues>
+      </node>
+      <node id="8478416" label="8478416">
+        <attvalues>
+          <attvalue for="0" value="Erik Cernak" />
+        </attvalues>
+      </node>
+      <node id="8477541" label="8477541">
+        <attvalues>
+          <attvalue for="0" value="Dakota Mermis" />
+        </attvalues>
+      </node>
+      <node id="8468493" label="8468493">
+        <attvalues>
+          <attvalue for="0" value="Ron Hainsey" />
+        </attvalues>
+      </node>
+      <node id="8478425" label="8478425">
+        <attvalues>
+          <attvalue for="0" value="Brendan Guhle" />
+        </attvalues>
+      </node>
+      <node id="8476166" label="8476166">
+        <attvalues>
+          <attvalue for="0" value="Taylor Fedun" />
+        </attvalues>
+      </node>
+      <node id="8476941" label="8476941">
+        <attvalues>
+          <attvalue for="0" value="Connor Carrick" />
+        </attvalues>
+      </node>
+      <node id="8477509" label="8477509">
+        <attvalues>
+          <attvalue for="0" value="Mirco Mueller" />
+        </attvalues>
+      </node>
+      <node id="8476807" label="8476807">
+        <attvalues>
+          <attvalue for="0" value="Matt Tennyson" />
+        </attvalues>
+      </node>
+      <node id="8474581" label="8474581">
+        <attvalues>
+          <attvalue for="0" value="Jake Gardiner" />
+        </attvalues>
+      </node>
+      <node id="8474688" label="8474688">
+        <attvalues>
+          <attvalue for="0" value="Greg Pateryn" />
+        </attvalues>
+      </node>
+      <node id="8477932" label="8477932">
+        <attvalues>
+          <attvalue for="0" value="Aaron Ekblad" />
+        </attvalues>
+      </node>
+      <node id="8474579" label="8474579">
+        <attvalues>
+          <attvalue for="0" value="Luca Sbisa" />
+        </attvalues>
+      </node>
+      <node id="8471242" label="8471242">
+        <attvalues>
+          <attvalue for="0" value="Mike Green" />
+        </attvalues>
+      </node>
+      <node id="8470110" label="8470110">
+        <attvalues>
+          <attvalue for="0" value="Trevor Daley" />
+        </attvalues>
+      </node>
+      <node id="8471702" label="8471702">
+        <attvalues>
+          <attvalue for="0" value="Matt Niskanen" />
+        </attvalues>
+      </node>
+      <node id="8473560" label="8473560">
+        <attvalues>
+          <attvalue for="0" value="Korbinian Holzer" />
+        </attvalues>
+      </node>
+      <node id="8480172" label="8480172">
+        <attvalues>
+          <attvalue for="0" value="Jan Rutta" />
+        </attvalues>
+      </node>
+      <node id="8476891" label="8476891">
+        <attvalues>
+          <attvalue for="0" value="Matt Grzelcyk" />
+        </attvalues>
+      </node>
+      <node id="8479324" label="8479324">
+        <attvalues>
+          <attvalue for="0" value="Ryan Lindgren" />
+        </attvalues>
+      </node>
+      <node id="8480160" label="8480160">
+        <attvalues>
+          <attvalue for="0" value="Radim Simek" />
+        </attvalues>
+      </node>
+      <node id="8480945" label="8480945">
+        <attvalues>
+          <attvalue for="0" value="Juuso Riikola" />
+        </attvalues>
+      </node>
+      <node id="8473415" label="8473415">
+        <attvalues>
+          <attvalue for="0" value="Alex Biega" />
+        </attvalues>
+      </node>
+      <node id="8479395" label="8479395">
+        <attvalues>
+          <attvalue for="0" value="Dennis Cholowski" />
+        </attvalues>
+      </node>
+      <node id="8475797" label="8475797">
+        <attvalues>
+          <attvalue for="0" value="Jarred Tinordi" />
+        </attvalues>
+      </node>
+      <node id="8478021" label="8478021">
+        <attvalues>
+          <attvalue for="0" value="William Lagesson" />
+        </attvalues>
+      </node>
+      <node id="8477474" label="8477474">
+        <attvalues>
+          <attvalue for="0" value="Madison Bowey" />
+        </attvalues>
+      </node>
+      <node id="8480147" label="8480147">
+        <attvalues>
+          <attvalue for="0" value="Oscar Fantenberg" />
+        </attvalues>
+      </node>
+      <node id="8470151" label="8470151">
+        <attvalues>
+          <attvalue for="0" value="Jay Bouwmeester" />
+        </attvalues>
+      </node>
+      <node id="8475186" label="8475186">
+        <attvalues>
+          <attvalue for="0" value="John Moore" />
+        </attvalues>
+      </node>
+      <node id="8481572" label="8481572">
+        <attvalues>
+          <attvalue for="0" value="Ville Heinola" />
+        </attvalues>
+      </node>
+      <node id="8474125" label="8474125">
+        <attvalues>
+          <attvalue for="0" value="Carl Gunnarsson" />
+        </attvalues>
+      </node>
+      <node id="8470601" label="8470601">
+        <attvalues>
+          <attvalue for="0" value="Braydon Coburn" />
+        </attvalues>
+      </node>
+      <node id="8478915" label="8478915">
+        <attvalues>
+          <attvalue for="0" value="Sami Niku" />
+        </attvalues>
+      </node>
+      <node id="8479982" label="8479982">
+        <attvalues>
+          <attvalue for="0" value="Conor Timmins" />
+        </attvalues>
+      </node>
     </nodes>
     <edges>
       <edge source="8475825" target="8476902" id="0" weight="1.6215604289620953" />
