@@ -54,6 +54,7 @@ corsi_influence.columns = [
     'corsi_influence_on_player1', 'corsi_influence_on_player2']
 corsi_pairings_df = pairings_df.join(corsi_influence)
 
+# Full edgelist
 # Do we adjust scale to mean 3 stdDev 1 here? Might remove negative edges entirely
 # and process improvements/hindrances separately.
 corsi_stdDev = defensemen_df['onIce_corsiPercentage'].std()
@@ -66,20 +67,37 @@ corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.appl
 # corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
 #     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev), axis=1)
 
-# This is to determine whether a combo is net positive or negative
-corsi_pairings_df['combined_corsi_influence'] = corsi_pairings_df.apply(
-    lambda row: row.corsi_influence_on_player1 + row.corsi_influence_on_player2, axis=1)
-
 # save in new csv
 output_file = os.path.join(
     dirname, '../../data/defense/defensemen_edgelist_corsi.csv')
 corsi_pairings_df.to_csv(output_file)
 
+
+# Net positive
+# This is to determine whether a combo is net positive or negative
+net_positive_df = corsi_pairings_df
+net_positive_df['combined_corsi_influence'] = net_positive_df.apply(
+    lambda row: row.corsi_influence_on_player1 + row.corsi_influence_on_player2, axis=1)
+
 # drop any edges that are net negative
-corsi_pairings_df = corsi_pairings_df.drop(
-    corsi_pairings_df[corsi_pairings_df.combined_corsi_influence < 0].index)
+net_positive_df = net_positive_df.drop(
+    net_positive_df[net_positive_df.combined_corsi_influence < 0].index)
+
+# save in new csv
+output_file = os.path.join(
+    dirname, '../../data/defense/defensemen_edgelist_corsi_net_positive.csv')
+net_positive_df.to_csv(output_file)
+
+
+# Positive directed
+# So we can analyze improving relationships only
+positive_inf_df = corsi_pairings_df
+positive_inf_df['corsi_influence_on_player1'] = positive_inf_df.apply(
+    lambda row: max(0, row.corsi_influence_on_player1), axis=1)
+positive_inf_df['corsi_influence_on_player2'] = positive_inf_df.apply(
+    lambda row: max(0, row.corsi_influence_on_player2), axis=1)
 
 # save in new csv
 output_file = os.path.join(
     dirname, '../../data/defense/defensemen_edgelist_corsi_positive.csv')
-corsi_pairings_df.to_csv(output_file)
+positive_inf_df.to_csv(output_file)
