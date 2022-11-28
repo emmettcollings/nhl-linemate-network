@@ -60,14 +60,19 @@ corsi_pairings_df = pairings_df.join(corsi_influence)
 corsi_stdDev = defensemen_df['onIce_corsiPercentage'].std()
 corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
     lambda row: (row.corsi_influence_on_player1 / corsi_stdDev) + 4, axis=1)
-# corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
-#     lambda row: (row.corsi_influence_on_player1 / corsi_stdDev), axis=1)
 corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev) + 4, axis=1)
-# corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
-#     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev), axis=1)
+
+
+# Positive directed
+# So we can analyze improving relationships only
+positive_inf_df = corsi_pairings_df
+positive_inf_df['corsi_influence_on_player1'] = positive_inf_df.apply(
+    lambda row: max(0, row.corsi_influence_on_player1), axis=1)
+positive_inf_df['corsi_influence_on_player2'] = positive_inf_df.apply(
+    lambda row: max(0, row.corsi_influence_on_player2), axis=1)
 
 # save in new csv
 output_file = os.path.join(
-    dirname, '../../data/defense/defensemen_edgelist_corsi.csv')
-corsi_pairings_df.to_csv(output_file)
+    dirname, '../../data/defense/defensemen_edgelist_corsi_positive.csv')
+positive_inf_df.to_csv(output_file)
