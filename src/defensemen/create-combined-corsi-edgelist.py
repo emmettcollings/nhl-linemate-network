@@ -63,20 +63,12 @@ corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.appl
 corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev) + 4, axis=1)
 
-# Net negative
-net_negative_df = corsi_pairings_df
-net_negative_df['combined_corsi_influence'] = net_negative_df.apply(
+# This is to determine whether a combo is net positive or negative
+net_positive_df = corsi_pairings_df
+net_positive_df['combined_corsi_influence'] = net_positive_df.apply(
     lambda row: row.corsi_influence_on_player1 + row.corsi_influence_on_player2, axis=1)
-
-# drop any edges that are net positive
-net_negative_df = net_negative_df.drop(
-    net_negative_df[net_negative_df.combined_corsi_influence > 0].index)
-
-# invert negative to positive so our graph is nicer
-net_negative_df['combined_corsi_influence_negative'] = net_negative_df.apply(
-    lambda row: row.combined_corsi_influence * -1, axis=1)
 
 # save in new csv
 output_file = os.path.join(
-    dirname, '../../data/defense/defensemen_edgelist_corsi_net_negative.csv')
-net_negative_df.to_csv(output_file)
+    dirname, '../../data/defense/defensemen_edgelist_corsi_net_positive.csv')
+net_positive_df.to_csv(output_file)
