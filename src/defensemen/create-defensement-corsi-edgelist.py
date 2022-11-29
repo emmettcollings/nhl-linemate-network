@@ -55,17 +55,16 @@ corsi_influence.columns = [
 corsi_pairings_df = pairings_df.join(corsi_influence)
 
 # Full edgelist
-# Do we adjust scale to mean 4 stdDev 1 here? Might remove negative edges entirely
-# and process improvements/hindrances separately.
 corsi_stdDev = defensemen_df['onIce_corsiPercentage'].std()
 corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
     lambda row: (row.corsi_influence_on_player1 / corsi_stdDev) + 4, axis=1)
-# corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
-#     lambda row: (row.corsi_influence_on_player1 / corsi_stdDev), axis=1)
 corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev) + 4, axis=1)
-# corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
-#     lambda row: (row.corsi_influence_on_player2 / corsi_stdDev), axis=1)
+
+# This is to determine whether a combo is net positive or negative
+net_positive_df = corsi_pairings_df
+net_positive_df['combined_corsi_influence'] = net_positive_df.apply(
+    lambda row: row.corsi_influence_on_player1 + row.corsi_influence_on_player2, axis=1)
 
 # save in new csv
 output_file = os.path.join(
