@@ -64,6 +64,24 @@ def add_player_data(player_row):
         updated_row.OnIce_F_goals += player_row.OnIce_F_goals
         # individual d zone giveaways
         updated_row.I_F_dZoneGiveaways += player_row.I_F_dZoneGiveaways
+        # individual giveaways
+        updated_row.I_F_giveaways += player_row.I_F_giveaways
+        # individual hits
+        updated_row.I_F_hits += player_row.I_F_hits
+        # individual takeaways
+        updated_row.I_F_takeaways += player_row.I_F_takeaways
+        # points
+        updated_row.I_F_points += player_row.I_F_points
+        # shots blocked
+        updated_row.shotsBlockedByPlayer += player_row.shotsBlockedByPlayer
+        # o zone shift starts
+        updated_row.I_F_oZoneShiftStarts += player_row.I_F_oZoneShiftStarts
+        # d zone shift starts
+        updated_row.I_F_dZoneShiftStarts += player_row.I_F_dZoneShiftStarts
+        # neutral zone shift starts
+        updated_row.I_F_neutralZoneShiftStarts += player_row.I_F_neutralZoneShiftStarts
+        # fly shift starts
+        updated_row.I_F_flyShiftStarts += player_row.I_F_flyShiftStarts
 
     else:
         updated_row = player_row
@@ -92,9 +110,45 @@ skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
 skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
     lambda row: (row.I_F_dZoneGiveaways / row.icetime) * 60 * 60, axis=1)
 
+# Giveaways per 60
+skaters_df['I_F_giveaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_giveaways / row.icetime) * 60 * 60, axis=1)
+
 # Average TOI
 skaters_df['average_TOI'] = skaters_df.apply(
     lambda row: row.icetime / row.games_played, axis=1)
+
+# Hits per 60
+skaters_df['I_F_hits_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_hits / row.icetime) * 60 * 60, axis=1)
+
+# Takeaways per 60
+skaters_df['I_F_takeaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_takeaways / row.icetime) * 60 * 60, axis=1)
+
+# Points per 60
+skaters_df['I_F_points_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_points / row.icetime) * 60 * 60, axis=1)
+
+# Shots blocked per 60
+skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
+    lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
+
+# O zone starts per game
+skaters_df['I_F_oZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_oZoneShiftStarts / row.games_played, axis=1)
+
+# D zone starts per game
+skaters_df['I_F_dZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_dZoneShiftStarts / row.games_played, axis=1)
+
+# Neutral zone starts per game
+skaters_df['I_F_neutralZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_neutralZoneShiftStarts / row.games_played, axis=1)
+
+# Fly shift starts per game
+skaters_df['I_F_flyShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_flyShiftStarts / row.games_played, axis=1)
 
 
 print(skaters_df)
