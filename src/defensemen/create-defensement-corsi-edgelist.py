@@ -37,10 +37,10 @@ def calculate_corsi_influence_pair(line_row):
     p1_inf_p2 = float(line_cfp - p1_cfp_without)
 
     # if the influence is negligible we replace with 0 to avoid clutter
-    # if (abs(p2_inf_p1) < 1e-10):
-    #     p2_inf_p1 = 0
-    # if (abs(p1_inf_p2) < 1e-10):
-    #     p1_inf_p2 = 0
+    if (abs(p2_inf_p1) < 1e-10):
+        p2_inf_p1 = 0
+    if (abs(p1_inf_p2) < 1e-10):
+        p1_inf_p2 = 0
     return pd.Series([p1_inf_p2, p2_inf_p1])
 
 
@@ -57,9 +57,9 @@ corsi_pairings_df = pairings_df.join(corsi_influence)
 # Full edgelist
 corsi_stdDev = defensemen_df['onIce_corsiPercentage'].std()
 corsi_pairings_df['corsi_influence_on_player1_stdDevs'] = corsi_pairings_df.apply(
-    lambda row: (row.corsi_influence_on_player1 / corsi_stdDev), axis=1)
+    lambda row: (row.corsi_influence_on_player1 / corsi_stdDev) + 4, axis=1)
 corsi_pairings_df['corsi_influence_on_player2_stdDevs'] = corsi_pairings_df.apply(
-    lambda row: (row.corsi_influence_on_player2 / corsi_stdDev), axis=1)
+    lambda row: (row.corsi_influence_on_player2 / corsi_stdDev) + 4, axis=1)
 
 # This is to determine whether a combo is net positive or negative
 net_positive_df = corsi_pairings_df
