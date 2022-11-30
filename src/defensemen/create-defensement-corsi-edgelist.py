@@ -37,10 +37,10 @@ def calculate_corsi_influence_pair(line_row):
     p1_inf_p2 = float(line_cfp - p1_cfp_without)
 
     # if the influence is negligible we replace with 0 to avoid clutter
-    if (abs(p2_inf_p1) < 1e-10):
-        p2_inf_p1 = 0
-    if (abs(p1_inf_p2) < 1e-10):
-        p1_inf_p2 = 0
+    # if (abs(p2_inf_p1) < 1e-10):
+    #     p2_inf_p1 = 0
+    # if (abs(p1_inf_p2) < 1e-10):
+    #     p1_inf_p2 = 0
     return pd.Series([p1_inf_p2, p2_inf_p1])
 
 
