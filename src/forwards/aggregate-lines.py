@@ -15,8 +15,8 @@ lines_files = glob.glob(lines_dir + '*.csv')
 def format_lines_df(df):
     situation = df[df['situation'] == '5on5']
     df = pd.DataFrame(situation)
-    lines = df[df['position'] == 'line']
-    df = pd.DataFrame(lines)
+    pairings = df[df['position'] != 'pairing']
+    df = pd.DataFrame(pairings)
     df = df.drop(
         columns=['season', 'iceTimeRank', 'team', 'situation'])
     df = df.rename(columns={'name': 'playerNames'})
@@ -44,7 +44,12 @@ def add_line_data(line_row):
 
         updated_row.games_played += line_row.games_played
         updated_row.icetime += line_row.icetime
+        # corsi
         updated_row.corsiPercentage = updated_cfp
+        # goals for
+        updated_row.goalsFor += line_row.goalsFor
+        # d zone giveaways
+        updated_row.dZoneGiveawaysFor += line_row.dZoneGiveawaysFor
     else:
         updated_row = line_row
     return updated_row
@@ -56,6 +61,9 @@ for file in lines_files:
     updated_df = df.apply(add_line_data, axis=1)
     lines_df = pd.concat([lines_df, updated_df])
     lines_df = lines_df[~lines_df.index.duplicated(keep='last')]
+
+# drop any lines that have less than 100 minutes (6000s) of icetime
+lines_df = lines_df.drop(lines_df[lines_df.icetime < 6000].index)
 
 
 # Separate lineId into playerIds
@@ -69,11 +77,6 @@ split_ids.columns = 'playerId' + \
     (split_ids.columns + 1).astype(str).str.zfill(1)
 lines_df = lines_df.join(split_ids)
 
-# Some lines are incorrectly formatted. They all have quite small samples so
-# I think it's fine to just remove them
-invalid_line = lines_df[lines_df['playerId3'] != '']
-lines_df = pd.DataFrame(invalid_line)
-
 # add full player names
 forwards_file = os.path.join(
     dirname, '../../data/forwards/aggregate_forwards.csv')
@@ -84,6 +87,14 @@ lines_df['player2Name'] = lines_df.apply(
     lambda x: forwards_df.loc[int(x.playerId2)].playerName, axis=1)
 lines_df['player3Name'] = lines_df.apply(
     lambda x: forwards_df.loc[int(x.playerId3)].playerName, axis=1)
+
+
+# compute per 60 of stats we are interested in
+lines_df['goalsFor_per60'] = lines_df.apply(
+    lambda row: (row.goalsFor / row.icetime) * 60 * 60, axis=1)
+lines_df['dZoneGiveaways_per60'] = lines_df.apply(
+    lambda row: (row.dZoneGiveawaysFor / row.icetime) * 60 * 60, axis=1)
+
 print(lines_df)
 
 output_file = os.path.join(

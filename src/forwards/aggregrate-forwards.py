@@ -37,15 +37,52 @@ def add_player_data(player_row):
     id = player_row.name
     if player_row.name in skaters_df.index:
         updated_row = skaters_df.loc[id]
+
+        # use for updating stats expressed as percentages
         total_icetime = updated_row.icetime + player_row.icetime
-        updated_cfp = player_row.onIce_corsiPercentage * \
+        total_timeOnBench = updated_row.timeOnBench + player_row.timeOnBench
+
+        # on ice corsi percentage
+        updated_on_ice_corsi = player_row.onIce_corsiPercentage * \
             (player_row.icetime / total_icetime) + \
             updated_row.onIce_corsiPercentage * \
             (updated_row.icetime / total_icetime)
 
+        # off ice corsi percentage
+        updated_off_ice_corsi = player_row.offIce_corsiPercentage * \
+            (player_row.timeOnBench / total_timeOnBench) + \
+            updated_row.offIce_corsiPercentage * \
+            (updated_row.timeOnBench / total_timeOnBench)
+
         updated_row.games_played += player_row.games_played
         updated_row.icetime += player_row.icetime
-        updated_row.onIce_corsiPercentage = updated_cfp
+        updated_row.timeOnBench += player_row.timeOnBench
+        # corsi on and off ice
+        updated_row.onIce_corsiPercentage = updated_on_ice_corsi
+        updated_row.offIce_corsiPercentage = updated_off_ice_corsi
+        # on ice goals for
+        updated_row.OnIce_F_goals += player_row.OnIce_F_goals
+        # individual d zone giveaways
+        updated_row.I_F_dZoneGiveaways += player_row.I_F_dZoneGiveaways
+        # individual giveaways
+        updated_row.I_F_giveaways += player_row.I_F_giveaways
+        # individual hits
+        updated_row.I_F_hits += player_row.I_F_hits
+        # individual takeaways
+        updated_row.I_F_takeaways += player_row.I_F_takeaways
+        # points
+        updated_row.I_F_points += player_row.I_F_points
+        # shots blocked
+        updated_row.shotsBlockedByPlayer += player_row.shotsBlockedByPlayer
+        # o zone shift starts
+        updated_row.I_F_oZoneShiftStarts += player_row.I_F_oZoneShiftStarts
+        # d zone shift starts
+        updated_row.I_F_dZoneShiftStarts += player_row.I_F_dZoneShiftStarts
+        # neutral zone shift starts
+        updated_row.I_F_neutralZoneShiftStarts += player_row.I_F_neutralZoneShiftStarts
+        # fly shift starts
+        updated_row.I_F_flyShiftStarts += player_row.I_F_flyShiftStarts
+
     else:
         updated_row = player_row
     return updated_row
@@ -58,7 +95,74 @@ for file in skaters_files:
     skaters_df = pd.concat([skaters_df, updated_df])
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
 
+# compute some new stats that may be of use to us
+# Difference in team corsi when player is on. Conceptually seems indicative of
+# a player being much better than their teammates or otherwise important to the
+# team's success
+skaters_df['on_off_corsi_diff'] = skaters_df.apply(
+    lambda row: row.onIce_corsiPercentage - row.offIce_corsiPercentage, axis=1)
+
+# Team goals for per 60
+skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
+    lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1)
+
+# D zone giveaways per 60
+skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_dZoneGiveaways / row.icetime) * 60 * 60, axis=1)
+
+# Giveaways per 60
+skaters_df['I_F_giveaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_giveaways / row.icetime) * 60 * 60, axis=1)
+
+# Average TOI
+skaters_df['average_TOI'] = skaters_df.apply(
+    lambda row: row.icetime / row.games_played, axis=1)
+
+# Hits per 60
+skaters_df['I_F_hits_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_hits / row.icetime) * 60 * 60, axis=1)
+
+# Takeaways per 60
+skaters_df['I_F_takeaways_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_takeaways / row.icetime) * 60 * 60, axis=1)
+
+# Points per 60
+skaters_df['I_F_points_per60'] = skaters_df.apply(
+    lambda row: (row.I_F_points / row.icetime) * 60 * 60, axis=1)
+
+# Shots blocked per 60
+skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
+    lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
+
+# O zone starts per game
+skaters_df['I_F_oZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_oZoneShiftStarts / row.games_played, axis=1)
+
+# D zone starts per game
+skaters_df['I_F_dZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_dZoneShiftStarts / row.games_played, axis=1)
+
+# Neutral zone starts per game
+skaters_df['I_F_neutralZoneShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_neutralZoneShiftStarts / row.games_played, axis=1)
+
+# Fly shift starts per game
+skaters_df['I_F_flyShiftStarts_per_game'] = skaters_df.apply(
+    lambda row: row.I_F_flyShiftStarts / row.games_played, axis=1)
+
+
 print(skaters_df)
+print(skaters_df['onIce_corsiPercentage'].mean())
+print(skaters_df['onIce_corsiPercentage'].std())
+print(skaters_df['offIce_corsiPercentage'].mean())
+print(skaters_df['offIce_corsiPercentage'].std())
+print(skaters_df['OnIce_F_goals_per60'].mean())
+print(skaters_df['OnIce_F_goals_per60'].std())
+print(skaters_df['I_F_dZoneGiveaways_per60'].mean())
+print(skaters_df['I_F_dZoneGiveaways_per60'].std())
+print(skaters_df['average_TOI'].mean())
+print(skaters_df['average_TOI'].std())
+
 output_file = os.path.join(
     dirname, '../../data/forwards/aggregate_forwards.csv')
 skaters_df.to_csv(output_file)
