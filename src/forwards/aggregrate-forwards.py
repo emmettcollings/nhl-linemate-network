@@ -135,20 +135,20 @@ skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
     lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
 
 # O zone starts per game
-skaters_df['I_F_oZoneShiftStarts_per_game'] = skaters_df.apply(
-    lambda row: row.I_F_oZoneShiftStarts / row.games_played, axis=1)
+skaters_df['I_F_oZoneShiftStarts_per60'] = skaters_df.apply(
+    lambda row: row.I_F_oZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
 # D zone starts per game
-skaters_df['I_F_dZoneShiftStarts_per_game'] = skaters_df.apply(
-    lambda row: row.I_F_dZoneShiftStarts / row.games_played, axis=1)
+skaters_df['I_F_dZoneShiftStarts_per60'] = skaters_df.apply(
+    lambda row: row.I_F_dZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
 # Neutral zone starts per game
-skaters_df['I_F_neutralZoneShiftStarts_per_game'] = skaters_df.apply(
-    lambda row: row.I_F_neutralZoneShiftStarts / row.games_played, axis=1)
+skaters_df['I_F_neutralZoneShiftStarts_per60'] = skaters_df.apply(
+    lambda row: row.I_F_neutralZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
 # Fly shift starts per game
-skaters_df['I_F_flyShiftStarts_per_game'] = skaters_df.apply(
-    lambda row: row.I_F_flyShiftStarts / row.games_played, axis=1)
+skaters_df['I_F_flyShiftStarts_per60'] = skaters_df.apply(
+    lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1)
 
 # Write to file
 output_file = os.path.join(
