@@ -68,7 +68,7 @@ pairings_df = pairings_df.drop(pairings_df[pairings_df.icetime < 6000].index)
 
 # Separate lineId into playerIds
 def split_string(x): return pd.Series(
-    [x[i:i+7] for i in range(0, len(x), 7)])
+    [x[i:i + 7] for i in range(0, len(x), 7)])
 
 
 split_ids = pairings_df.index.to_series().apply(

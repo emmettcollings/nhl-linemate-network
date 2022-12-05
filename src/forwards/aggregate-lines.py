@@ -46,10 +46,6 @@ def add_line_data(line_row):
         updated_row.icetime += line_row.icetime
         # corsi
         updated_row.corsiPercentage = updated_cfp
-        # goals for
-        updated_row.goalsFor += line_row.goalsFor
-        # d zone giveaways
-        updated_row.dZoneGiveawaysFor += line_row.dZoneGiveawaysFor
     else:
         updated_row = line_row
     return updated_row
@@ -68,7 +64,7 @@ lines_df = lines_df.drop(lines_df[lines_df.icetime < 6000].index)
 
 # Separate lineId into playerIds
 def split_string(x): return pd.Series(
-    [x[i:i+7] for i in range(0, len(x), 7)])
+    [x[i:i + 7] for i in range(0, len(x), 7)])
 
 
 split_ids = lines_df.index.to_series().apply(
@@ -88,15 +84,7 @@ lines_df['player2Name'] = lines_df.apply(
 lines_df['player3Name'] = lines_df.apply(
     lambda x: forwards_df.loc[int(x.playerId3)].playerName, axis=1)
 
-
-# compute per 60 of stats we are interested in
-lines_df['goalsFor_per60'] = lines_df.apply(
-    lambda row: (row.goalsFor / row.icetime) * 60 * 60, axis=1)
-lines_df['dZoneGiveaways_per60'] = lines_df.apply(
-    lambda row: (row.dZoneGiveawaysFor / row.icetime) * 60 * 60, axis=1)
-
-print(lines_df)
-
+# Write to file
 output_file = os.path.join(
     dirname, '../../data/forwards/aggregate_lines.csv')
 lines_df.to_csv(output_file)

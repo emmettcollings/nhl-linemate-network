@@ -82,7 +82,6 @@ def add_player_data(player_row):
         updated_row.I_F_neutralZoneShiftStarts += player_row.I_F_neutralZoneShiftStarts
         # fly shift starts
         updated_row.I_F_flyShiftStarts += player_row.I_F_flyShiftStarts
-
     else:
         updated_row = player_row
     return updated_row
@@ -94,6 +93,7 @@ for file in skaters_files:
     updated_df = df.apply(add_player_data, axis=1)
     skaters_df = pd.concat([skaters_df, updated_df])
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
+
 
 # compute some new stats that may be of use to us
 # Difference in team corsi when player is on. Conceptually seems indicative of
@@ -150,19 +150,7 @@ skaters_df['I_F_neutralZoneShiftStarts_per_game'] = skaters_df.apply(
 skaters_df['I_F_flyShiftStarts_per_game'] = skaters_df.apply(
     lambda row: row.I_F_flyShiftStarts / row.games_played, axis=1)
 
-
-print(skaters_df)
-print(skaters_df['onIce_corsiPercentage'].mean())
-print(skaters_df['onIce_corsiPercentage'].std())
-print(skaters_df['offIce_corsiPercentage'].mean())
-print(skaters_df['offIce_corsiPercentage'].std())
-print(skaters_df['OnIce_F_goals_per60'].mean())
-print(skaters_df['OnIce_F_goals_per60'].std())
-print(skaters_df['I_F_dZoneGiveaways_per60'].mean())
-print(skaters_df['I_F_dZoneGiveaways_per60'].std())
-print(skaters_df['average_TOI'].mean())
-print(skaters_df['average_TOI'].std())
-
+# Write to file
 output_file = os.path.join(
     dirname, '../../data/forwards/aggregate_forwards.csv')
 skaters_df.to_csv(output_file)
