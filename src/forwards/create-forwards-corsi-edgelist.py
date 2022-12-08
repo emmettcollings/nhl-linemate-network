@@ -22,7 +22,9 @@ edgelist_df = pd.DataFrame(
         'icetime',
         'corsiPercentage',
         'cf_inf_on1',
-        'cf_inf_on2'])
+        'cf_inf_on2',
+        'cf_inf_on1_std',
+        'cf_inf_on2_std'])
 
 
 for id in forwards_df.index:
@@ -101,7 +103,9 @@ for id in forwards_df.index:
                 'icetime': line_row.icetime,
                 'corsiPercentage': line_row.corsiPercentage,
                 'cf_inf_on1': cfs[0],
-                'cf_inf_on2': cfs[1]}
+                'cf_inf_on2': cfs[1],
+                'cf_inf_on1_std': 5 + cfs[0] / np.std(forwards_df['onIce_corsiPercentage']),
+                'cf_inf_on2_std': 5 + cfs[1] / np.std(forwards_df['onIce_corsiPercentage'])}
             edgelist_df = edgelist_df.append(new_row, ignore_index=True)
 
     # Check pairs of players on a line
