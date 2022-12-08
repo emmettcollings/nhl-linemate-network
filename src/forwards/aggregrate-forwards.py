@@ -82,6 +82,12 @@ def add_player_data(player_row):
         updated_row.I_F_neutralZoneShiftStarts += player_row.I_F_neutralZoneShiftStarts
         # fly shift starts
         updated_row.I_F_flyShiftStarts += player_row.I_F_flyShiftStarts
+        # primary assists
+        updated_row.I_F_primaryAssists += player_row.I_F_primaryAssists
+        # secondary assists
+        updated_row.I_F_secondaryAssists += player_row.I_F_secondaryAssists
+        # individual goals
+        updated_row.I_F_goals += player_row.I_F_goals
     else:
         updated_row = player_row
     return updated_row
@@ -134,21 +140,35 @@ skaters_df['I_F_points_per60'] = skaters_df.apply(
 skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
     lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
 
-# O zone starts per game
+# O zone starts per 60
 skaters_df['I_F_oZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_oZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# D zone starts per game
+# D zone starts per 60
 skaters_df['I_F_dZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_dZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# Neutral zone starts per game
+# Neutral zone starts per 60
 skaters_df['I_F_neutralZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_neutralZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# Fly shift starts per game
+# Fly shift starts per 60
 skaters_df['I_F_flyShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1)
+
+# primary assists
+skaters_df['I_F_primaryAssists_per60'] = skaters_df.apply(
+    lambda row: row.I_F_primaryAssists / row.icetime * 60 * 60, axis=1)
+
+# secondary assists
+skaters_df['I_F_secondaryAssists_per60'] = skaters_df.apply(
+    lambda row: row.I_F_secondaryAssists / row.icetime * 60 * 60, axis=1)
+
+# individual assists
+skaters_df['I_F_goals_per60'] = skaters_df.apply(
+    lambda row: row.I_F_goals / row.icetime * 60 * 60, axis=1)
+
+
 
 interesting_stats = [
     'playerName',
@@ -169,7 +189,10 @@ interesting_stats = [
     'I_F_oZoneShiftStarts_per60',
     'I_F_dZoneShiftStarts_per60',
     'I_F_neutralZoneShiftStarts_per60',
-    'I_F_flyShiftStarts_per60'
+    'I_F_flyShiftStarts_per60',
+    'I_F_primaryAssists_per60',
+    'I_F_secondaryAssists_per60',
+    'I_F_goals_per60'
 ]
 
 # Drop stats we don't aggregate
