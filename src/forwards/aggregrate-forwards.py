@@ -150,6 +150,31 @@ skaters_df['I_F_neutralZoneShiftStarts_per60'] = skaters_df.apply(
 skaters_df['I_F_flyShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1)
 
+interesting_stats = [
+    'playerName',
+    'games_played',
+    'icetime',
+    'timeOnBench',
+    'onIce_corsiPercentage',
+    'offIce_corsiPercentage',
+    'on_off_corsi_diff',
+    'OnIce_F_goals_per60',
+    'I_F_dZoneGiveaways_per60',
+    'I_F_giveaways_per60',
+    'average_TOI',
+    'I_F_hits_per60',
+    'I_F_takeaways_per60',
+    'I_F_points_per60',
+    'shotsBlockedByPlayer_per60',
+    'I_F_oZoneShiftStarts_per60',
+    'I_F_dZoneShiftStarts_per60',
+    'I_F_neutralZoneShiftStarts_per60',
+    'I_F_flyShiftStarts_per60'
+]
+
+# Drop stats we don't aggregate
+skaters_df = skaters_df[skaters_df.columns.intersection(interesting_stats)]
+
 # Write to file
 output_file = os.path.join(
     dirname, '../../data/forwards/aggregate_forwards.csv')
