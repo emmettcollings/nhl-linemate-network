@@ -121,6 +121,10 @@ for id in forwards_df.index:
 
     df.apply(process_edges, axis=1)
 
+
+edgelist_df['cf_inf_on1'] = edgelist_df.apply(lambda row: row.cf_inf_on1 * - 1, axis=1)
+edgelist_df['cf_inf_on2'] = edgelist_df.apply(lambda row: row.cf_inf_on2 * - 1, axis=1)
+
 # save in new csv
 output_file = os.path.join(
     dirname, '../../data/forwards/forwards_edgelist_corsi.csv')
