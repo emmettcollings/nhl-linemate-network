@@ -31,7 +31,6 @@ skaters_df = format_skater_df(skaters_df)
 
 print(skaters_files)
 
-
 # combines current player row with dataframe
 def add_player_data(player_row):
     id = player_row.name
@@ -62,6 +61,8 @@ def add_player_data(player_row):
         updated_row.offIce_corsiPercentage = updated_off_ice_corsi
         # on ice goals for
         updated_row.OnIce_F_goals += player_row.OnIce_F_goals
+        # on ice goals agains
+        updated_row.OnIce_A_goals += player_row.OnIce_A_goals
         # individual d zone giveaways
         updated_row.I_F_dZoneGiveaways += player_row.I_F_dZoneGiveaways
         # individual giveaways
@@ -82,7 +83,12 @@ def add_player_data(player_row):
         updated_row.I_F_neutralZoneShiftStarts += player_row.I_F_neutralZoneShiftStarts
         # fly shift starts
         updated_row.I_F_flyShiftStarts += player_row.I_F_flyShiftStarts
-
+        # primary assists
+        updated_row.I_F_primaryAssists += player_row.I_F_primaryAssists
+        # secondary assists
+        updated_row.I_F_secondaryAssists += player_row.I_F_secondaryAssists
+        # individual goals
+        updated_row.I_F_goals += player_row.I_F_goals
     else:
         updated_row = player_row
     return updated_row
@@ -95,6 +101,7 @@ for file in skaters_files:
     skaters_df = pd.concat([skaters_df, updated_df])
     skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
 
+
 # compute some new stats that may be of use to us
 # Difference in team corsi when player is on. Conceptually seems indicative of
 # a player being much better than their teammates or otherwise important to the
@@ -105,6 +112,10 @@ skaters_df['on_off_corsi_diff'] = skaters_df.apply(
 # Team goals for per 60
 skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
     lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1)
+
+# Opponent goals for per 60
+skaters_df['OnIce_A_goals_per60'] = skaters_df.apply(
+    lambda row: (row.OnIce_A_goals / row.icetime) * 60 * 60, axis=1)
 
 # D zone giveaways per 60
 skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
@@ -134,34 +145,64 @@ skaters_df['I_F_points_per60'] = skaters_df.apply(
 skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
     lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
 
-# O zone starts per game
+# O zone starts per 60
 skaters_df['I_F_oZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_oZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# D zone starts per game
+# D zone starts per 60
 skaters_df['I_F_dZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_dZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# Neutral zone starts per game
+# Neutral zone starts per 60
 skaters_df['I_F_neutralZoneShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_neutralZoneShiftStarts / row.icetime * 60 * 60, axis=1)
 
-# Fly shift starts per game
+# Fly shift starts per 60
 skaters_df['I_F_flyShiftStarts_per60'] = skaters_df.apply(
     lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1)
 
+# primary assists
+skaters_df['I_F_primaryAssists_per60'] = skaters_df.apply(
+    lambda row: row.I_F_primaryAssists / row.icetime * 60 * 60, axis=1)
 
-print(skaters_df)
-print(skaters_df['onIce_corsiPercentage'].mean())
-print(skaters_df['onIce_corsiPercentage'].std())
-print(skaters_df['offIce_corsiPercentage'].mean())
-print(skaters_df['offIce_corsiPercentage'].std())
-print(skaters_df['OnIce_F_goals_per60'].mean())
-print(skaters_df['OnIce_F_goals_per60'].std())
-print(skaters_df['I_F_dZoneGiveaways_per60'].mean())
-print(skaters_df['I_F_dZoneGiveaways_per60'].std())
-print(skaters_df['average_TOI'].mean())
-print(skaters_df['average_TOI'].std())
+# secondary assists
+skaters_df['I_F_secondaryAssists_per60'] = skaters_df.apply(
+    lambda row: row.I_F_secondaryAssists / row.icetime * 60 * 60, axis=1)
+
+# individual assists
+skaters_df['I_F_goals_per60'] = skaters_df.apply(
+    lambda row: row.I_F_goals / row.icetime * 60 * 60, axis=1)
+
+
+
+interesting_stats = [
+    'playerName',
+    'games_played',
+    'icetime',
+    'timeOnBench',
+    'onIce_corsiPercentage',
+    'offIce_corsiPercentage',
+    'on_off_corsi_diff',
+    'OnIce_F_goals_per60',
+    'OnIce_A_goals_per60',
+    'I_F_dZoneGiveaways_per60',
+    'I_F_giveaways_per60',
+    'average_TOI',
+    'I_F_hits_per60',
+    'I_F_takeaways_per60',
+    'I_F_points_per60',
+    'shotsBlockedByPlayer_per60',
+    'I_F_oZoneShiftStarts_per60',
+    'I_F_dZoneShiftStarts_per60',
+    'I_F_neutralZoneShiftStarts_per60',
+    'I_F_flyShiftStarts_per60',
+    'I_F_primaryAssists_per60',
+    'I_F_secondaryAssists_per60',
+    'I_F_goals_per60'
+]
+
+# Drop stats we don't aggregate
+skaters_df = skaters_df[skaters_df.columns.intersection(interesting_stats)]
 
 output_file = os.path.join(
     dirname, '../../data/defense/aggregate_defensemen.csv')

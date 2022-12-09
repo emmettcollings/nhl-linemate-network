@@ -62,6 +62,8 @@ def add_player_data(player_row):
         updated_row.offIce_corsiPercentage = updated_off_ice_corsi
         # on ice goals for
         updated_row.OnIce_F_goals += player_row.OnIce_F_goals
+        # on ice goals agains
+        updated_row.OnIce_A_goals += player_row.OnIce_A_goals
         # individual d zone giveaways
         updated_row.I_F_dZoneGiveaways += player_row.I_F_dZoneGiveaways
         # individual giveaways
@@ -111,6 +113,10 @@ skaters_df['on_off_corsi_diff'] = skaters_df.apply(
 # Team goals for per 60
 skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
     lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1)
+
+# Opponent goals for per 60
+skaters_df['OnIce_A_goals_per60'] = skaters_df.apply(
+    lambda row: (row.OnIce_A_goals / row.icetime) * 60 * 60, axis=1)
 
 # D zone giveaways per 60
 skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
@@ -179,6 +185,7 @@ interesting_stats = [
     'offIce_corsiPercentage',
     'on_off_corsi_diff',
     'OnIce_F_goals_per60',
+    'OnIce_A_goals_per60',
     'I_F_dZoneGiveaways_per60',
     'I_F_giveaways_per60',
     'average_TOI',
