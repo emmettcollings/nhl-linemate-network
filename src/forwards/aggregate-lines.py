@@ -1,8 +1,7 @@
-import pandas as pd
 import glob
 import os
-import numpy as np
-from numpy import int64
+
+import pandas as pd
 
 dirname = os.path.dirname(__file__)
 
@@ -19,6 +18,13 @@ def format_lines_df(df):
     df = pd.DataFrame(pairings)
     df = df.drop(
         columns=['season', 'iceTimeRank', 'team', 'situation'])
+
+
+
+
+
+
+
     df = df.rename(columns={'name': 'playerNames'})
     return df
 
@@ -29,6 +35,13 @@ lines_df = pd.read_csv(lines_file, index_col='lineId', header=0)
 lines_df = format_lines_df(lines_df)
 
 print(lines_files)
+
+
+
+
+
+
+
 
 
 # combines current line row with dataframe
