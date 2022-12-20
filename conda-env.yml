@@ -4,8 +4,9 @@ channels:
 dependencies:
   - autopep8
   - pandas
-  - ipykernel
-  - matplotlib
-  - networkx
   - scipy
+  - matplotlib
+  - ipykernel
+  - networkx
+  - pylint
 prefix: /home/emmett/miniconda3/envs/nhl-linemate-network

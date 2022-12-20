@@ -11,6 +11,9 @@ skaters_dir = os.path.join(dirname, '../../data/skaters/')
 skaters_files = glob.glob(skaters_dir + '*.csv')
 
 
+
+
+
 def format_skater_df(df):
     situation = df[df['situation'] == '5on5']
     df = pd.DataFrame(situation)
