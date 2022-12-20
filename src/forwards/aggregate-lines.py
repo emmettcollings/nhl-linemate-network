@@ -19,12 +19,6 @@ def format_lines_df(df):
     df = df.drop(
         columns=['season', 'iceTimeRank', 'team', 'situation'])
 
-
-
-
-
-
-
     df = df.rename(columns={'name': 'playerNames'})
     return df
 
@@ -35,13 +29,6 @@ lines_df = pd.read_csv(lines_file, index_col='lineId', header=0)
 lines_df = format_lines_df(lines_df)
 
 print(lines_files)
-
-
-
-
-
-
-
 
 
 # combines current line row with dataframe
@@ -76,8 +63,8 @@ lines_df = lines_df.drop(lines_df[lines_df.icetime < 6000].index)
 
 
 # Separate lineId into playerIds
-def split_string(x): return pd.Series(
-    [x[i:i + 7] for i in range(0, len(x), 7)])
+def split_string(x):
+    return pd.Series([x[i:i + 7] for i in range(0, len(x), 7)])
 
 
 split_ids = lines_df.index.to_series().apply(
