@@ -1,0 +1,12 @@
+name: nhl-linemate-network
+channels:
+  - defaults
+dependencies:
+  - autopep8
+  - pandas
+  - scipy
+  - matplotlib
+  - ipykernel
+  - networkx
+  - pylint
+prefix: /home/emmett/miniconda3/envs/nhl-linemate-network
