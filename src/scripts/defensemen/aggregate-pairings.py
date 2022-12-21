@@ -7,7 +7,7 @@ from numpy import int64
 dirname = os.path.dirname(__file__)
 
 # aggregate lines data
-lines_dir = os.path.join(dirname, '../../raw_data/lines/')
+lines_dir = os.path.join(dirname, '../../../data/raw/lines/')
 lines_files = glob.glob(lines_dir + '*.csv')
 
 
@@ -23,7 +23,7 @@ def format_lines_df(df):
     return df
 
 
-lines_file = os.path.join(dirname, '../../raw_data/lines/21-22_lines.csv')
+lines_file = os.path.join(dirname, '../../../data/raw/lines/21-22_lines.csv')
 lines_files.remove(lines_file)
 pairings_df = pd.read_csv(lines_file, index_col='lineId', header=0)
 pairings_df = format_lines_df(pairings_df)
@@ -79,7 +79,7 @@ pairings_df = pairings_df.join(split_ids)
 
 # add full player names
 defensemen_file = os.path.join(
-    dirname, '../../aggregated_data/defense/aggregate_defensemen.csv')
+    dirname, '../../../data/interim/aggregated_defensemen.csv')
 defensemen_df = pd.read_csv(defensemen_file, index_col='playerId', header=0)
 pairings_df['player1Name'] = pairings_df.apply(
     lambda x: defensemen_df.loc[int(x.playerId1)].playerName, axis=1)
@@ -95,5 +95,11 @@ pairings_df['dZoneGiveaways_per60'] = pairings_df.apply(
 print(pairings_df)
 
 output_file = os.path.join(
-    dirname, '../../aggregated_data/defense/aggregate_pairings.csv')
+    dirname, '../../../data/interim/aggregated_pairings.csv')
 pairings_df.to_csv(output_file)
+# Output to both folders since we won't modify this any further
+# Consider making a symlink?
+output_file = os.path.join(
+    dirname, '../../../data/final/aggregated_pairings.csv')
+pairings_df.to_csv(output_file)
+

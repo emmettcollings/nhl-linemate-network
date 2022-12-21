@@ -7,7 +7,7 @@ from numpy import int64
 # calculate corsi influence for defensemen pairings
 dirname = os.path.dirname(__file__)
 defensemen_file = os.path.join(
-    dirname, '../../aggregated_data/defense/aggregate_defensemen.csv')
+    dirname, '../../../data/interim/aggregated_defensemen.csv')
 defensemen_df = pd.read_csv(defensemen_file, index_col='playerId', header=0)
 
 
@@ -46,7 +46,7 @@ def calculate_corsi_influence_pair(line_row):
 
 # calculate influence players have on their partners
 pairings_file = os.path.join(
-    dirname, '../../aggregated_data/defense/aggregate_pairings.csv')
+    dirname, '../../../data/interim/aggregated_pairings.csv')
 pairings_df = pd.read_csv(pairings_file, index_col='lineId', header=0)
 
 corsi_influence = pairings_df.apply(calculate_corsi_influence_pair, axis=1)
@@ -67,5 +67,5 @@ net_positive_df['combined_corsi_influence'] = net_positive_df.apply(
 
 # save in new csv
 output_file = os.path.join(
-    dirname, '../../edgelists/defensemen_edgelist_corsi.csv')
+    dirname, '../../../data/edgelists/defensemen_edgelist_corsi.csv')
 corsi_pairings_df.to_csv(output_file)
