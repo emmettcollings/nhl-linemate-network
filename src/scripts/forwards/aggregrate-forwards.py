@@ -6,26 +6,25 @@ import pandas as pd
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
 
-skaters_dir = os.path.join(dirname, '../../../data/raw/skaters/')
-skaters_files = glob.glob(skaters_dir + '*.csv')
+skaters_dir = os.path.join(dirname, "../../../data/raw/skaters/")
+skaters_files = glob.glob(skaters_dir + "*.csv")
 
 
 def format_skater_df(df):
-    situation = df[df['situation'] == '5on5']
+    situation = df[df["situation"] == "5on5"]
     df = pd.DataFrame(situation)
-    position = df[df['position'] != 'D']
+    position = df[df["position"] != "D"]
     df = pd.DataFrame(position)
     # drop position and team as they may change from season to season
-    df = df.drop(
-        columns=['season', 'team', 'position', 'situation'])
-    df = df.rename(columns={'name': 'playerName'})
+    df = df.drop(columns=["season", "team", "position", "situation"])
+    df = df.rename(columns={"name": "playerName"})
     return df
 
 
 # aggregate skater data over our time period
-skater_file = os.path.join(dirname, '../../../data/raw/skaters/21-22_skaters.csv')
+skater_file = os.path.join(dirname, "../../../data/raw/skaters/21-22_skaters.csv")
 skaters_files.remove(skater_file)
-skaters_df = pd.read_csv(skater_file, index_col='playerId', header=0)
+skaters_df = pd.read_csv(skater_file, index_col="playerId", header=0)
 skaters_df = format_skater_df(skaters_df)
 
 print(skaters_files)
@@ -33,25 +32,25 @@ print(skaters_files)
 
 # combines current player row with dataframe
 def add_player_data(player_row):
-    id = player_row.name
+    player_id = player_row.name
     if player_row.name in skaters_df.index:
-        updated_row = skaters_df.loc[id]
+        updated_row = skaters_df.loc[player_id]
 
         # use for updating stats expressed as percentages
         total_icetime = updated_row.icetime + player_row.icetime
         total_timeOnBench = updated_row.timeOnBench + player_row.timeOnBench
 
         # on ice corsi percentage
-        updated_on_ice_corsi = player_row.onIce_corsiPercentage * \
-            (player_row.icetime / total_icetime) + \
-            updated_row.onIce_corsiPercentage * \
-            (updated_row.icetime / total_icetime)
+        updated_on_ice_corsi = player_row.onIce_corsiPercentage * (
+            player_row.icetime / total_icetime
+        ) + updated_row.onIce_corsiPercentage * (updated_row.icetime / total_icetime)
 
         # off ice corsi percentage
-        updated_off_ice_corsi = player_row.offIce_corsiPercentage * \
-            (player_row.timeOnBench / total_timeOnBench) + \
-            updated_row.offIce_corsiPercentage * \
-            (updated_row.timeOnBench / total_timeOnBench)
+        updated_off_ice_corsi = player_row.offIce_corsiPercentage * (
+            player_row.timeOnBench / total_timeOnBench
+        ) + updated_row.offIce_corsiPercentage * (
+            updated_row.timeOnBench / total_timeOnBench
+        )
 
         updated_row.games_played += player_row.games_played
         updated_row.icetime += player_row.icetime
@@ -95,119 +94,133 @@ def add_player_data(player_row):
 
 
 for file in skaters_files:
-    df = pd.read_csv(file, index_col='playerId', header=0)
+    df = pd.read_csv(file, index_col="playerId", header=0)
     df = format_skater_df(df)
     updated_df = df.apply(add_player_data, axis=1)
     skaters_df = pd.concat([skaters_df, updated_df])
-    skaters_df = skaters_df[~skaters_df.index.duplicated(keep='last')]
+    skaters_df = skaters_df[~skaters_df.index.duplicated(keep="last")]
 
 
 # compute some new stats that may be of use to us
 # Difference in team corsi when player is on. Conceptually seems indicative of
 # a player being much better than their teammates or otherwise important to the
 # team's success
-skaters_df['on_off_corsi_diff'] = skaters_df.apply(
-    lambda row: row.onIce_corsiPercentage - row.offIce_corsiPercentage, axis=1)
+skaters_df["on_off_corsi_diff"] = skaters_df.apply(
+    lambda row: row.onIce_corsiPercentage - row.offIce_corsiPercentage, axis=1
+)
 
 # Team goals for per 60
-skaters_df['OnIce_F_goals_per60'] = skaters_df.apply(
-    lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1)
+skaters_df["OnIce_F_goals_per60"] = skaters_df.apply(
+    lambda row: (row.OnIce_F_goals / row.icetime) * 60 * 60, axis=1
+)
 
 # Opponent goals for per 60
-skaters_df['OnIce_A_goals_per60'] = skaters_df.apply(
-    lambda row: (row.OnIce_A_goals / row.icetime) * 60 * 60, axis=1)
+skaters_df["OnIce_A_goals_per60"] = skaters_df.apply(
+    lambda row: (row.OnIce_A_goals / row.icetime) * 60 * 60, axis=1
+)
 
 # D zone giveaways per 60
-skaters_df['I_F_dZoneGiveaways_per60'] = skaters_df.apply(
-    lambda row: (row.I_F_dZoneGiveaways / row.icetime) * 60 * 60, axis=1)
+skaters_df["I_F_dZoneGiveaways_per60"] = skaters_df.apply(
+    lambda row: (row.I_F_dZoneGiveaways / row.icetime) * 60 * 60, axis=1
+)
 
 # Giveaways per 60
-skaters_df['I_F_giveaways_per60'] = skaters_df.apply(
-    lambda row: (row.I_F_giveaways / row.icetime) * 60 * 60, axis=1)
+skaters_df["I_F_giveaways_per60"] = skaters_df.apply(
+    lambda row: (row.I_F_giveaways / row.icetime) * 60 * 60, axis=1
+)
 
 # Average TOI
-skaters_df['average_TOI'] = skaters_df.apply(
-    lambda row: row.icetime / row.games_played, axis=1)
+skaters_df["average_TOI"] = skaters_df.apply(
+    lambda row: row.icetime / row.games_played, axis=1
+)
 
 # Hits per 60
-skaters_df['I_F_hits_per60'] = skaters_df.apply(
-    lambda row: (row.I_F_hits / row.icetime) * 60 * 60, axis=1)
+skaters_df["I_F_hits_per60"] = skaters_df.apply(
+    lambda row: (row.I_F_hits / row.icetime) * 60 * 60, axis=1
+)
 
 # Takeaways per 60
-skaters_df['I_F_takeaways_per60'] = skaters_df.apply(
-    lambda row: (row.I_F_takeaways / row.icetime) * 60 * 60, axis=1)
+skaters_df["I_F_takeaways_per60"] = skaters_df.apply(
+    lambda row: (row.I_F_takeaways / row.icetime) * 60 * 60, axis=1
+)
 
 # Points per 60
-skaters_df['I_F_points_per60'] = skaters_df.apply(
-    lambda row: (row.I_F_points / row.icetime) * 60 * 60, axis=1)
+skaters_df["I_F_points_per60"] = skaters_df.apply(
+    lambda row: (row.I_F_points / row.icetime) * 60 * 60, axis=1
+)
 
 # Shots blocked per 60
-skaters_df['shotsBlockedByPlayer_per60'] = skaters_df.apply(
-    lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1)
+skaters_df["shotsBlockedByPlayer_per60"] = skaters_df.apply(
+    lambda row: (row.shotsBlockedByPlayer / row.icetime) * 60 * 60, axis=1
+)
 
 # O zone starts per 60
-skaters_df['I_F_oZoneShiftStarts_per60'] = skaters_df.apply(
-    lambda row: row.I_F_oZoneShiftStarts / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_oZoneShiftStarts_per60"] = skaters_df.apply(
+    lambda row: row.I_F_oZoneShiftStarts / row.icetime * 60 * 60, axis=1
+)
 
 # D zone starts per 60
-skaters_df['I_F_dZoneShiftStarts_per60'] = skaters_df.apply(
-    lambda row: row.I_F_dZoneShiftStarts / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_dZoneShiftStarts_per60"] = skaters_df.apply(
+    lambda row: row.I_F_dZoneShiftStarts / row.icetime * 60 * 60, axis=1
+)
 
 # Neutral zone starts per 60
-skaters_df['I_F_neutralZoneShiftStarts_per60'] = skaters_df.apply(
-    lambda row: row.I_F_neutralZoneShiftStarts / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_neutralZoneShiftStarts_per60"] = skaters_df.apply(
+    lambda row: row.I_F_neutralZoneShiftStarts / row.icetime * 60 * 60, axis=1
+)
 
 # Fly shift starts per 60
-skaters_df['I_F_flyShiftStarts_per60'] = skaters_df.apply(
-    lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_flyShiftStarts_per60"] = skaters_df.apply(
+    lambda row: row.I_F_flyShiftStarts / row.icetime * 60 * 60, axis=1
+)
 
 # primary assists
-skaters_df['I_F_primaryAssists_per60'] = skaters_df.apply(
-    lambda row: row.I_F_primaryAssists / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_primaryAssists_per60"] = skaters_df.apply(
+    lambda row: row.I_F_primaryAssists / row.icetime * 60 * 60, axis=1
+)
 
 # secondary assists
-skaters_df['I_F_secondaryAssists_per60'] = skaters_df.apply(
-    lambda row: row.I_F_secondaryAssists / row.icetime * 60 * 60, axis=1)
+skaters_df["I_F_secondaryAssists_per60"] = skaters_df.apply(
+    lambda row: row.I_F_secondaryAssists / row.icetime * 60 * 60, axis=1
+)
 
 # individual assists
-skaters_df['I_F_goals_per60'] = skaters_df.apply(
-    lambda row: row.I_F_goals / row.icetime * 60 * 60, axis=1)
-
+skaters_df["I_F_goals_per60"] = skaters_df.apply(
+    lambda row: row.I_F_goals / row.icetime * 60 * 60, axis=1
+)
 
 
 interesting_stats = [
-    'playerName',
-    'games_played',
-    'icetime',
-    'timeOnBench',
-    'onIce_corsiPercentage',
-    'offIce_corsiPercentage',
-    'on_off_corsi_diff',
-    'OnIce_F_goals_per60',
-    'OnIce_A_goals_per60',
-    'I_F_dZoneGiveaways_per60',
-    'I_F_giveaways_per60',
-    'average_TOI',
-    'I_F_hits_per60',
-    'I_F_takeaways_per60',
-    'I_F_points_per60',
-    'shotsBlockedByPlayer_per60',
-    'I_F_oZoneShiftStarts_per60',
-    'I_F_dZoneShiftStarts_per60',
-    'I_F_neutralZoneShiftStarts_per60',
-    'I_F_flyShiftStarts_per60',
-    'I_F_primaryAssists_per60',
-    'I_F_secondaryAssists_per60',
-    'I_F_goals_per60'
+    "playerName",
+    "games_played",
+    "icetime",
+    "timeOnBench",
+    "onIce_corsiPercentage",
+    "offIce_corsiPercentage",
+    "on_off_corsi_diff",
+    "OnIce_F_goals_per60",
+    "OnIce_A_goals_per60",
+    "I_F_dZoneGiveaways_per60",
+    "I_F_giveaways_per60",
+    "average_TOI",
+    "I_F_hits_per60",
+    "I_F_takeaways_per60",
+    "I_F_points_per60",
+    "shotsBlockedByPlayer_per60",
+    "I_F_oZoneShiftStarts_per60",
+    "I_F_dZoneShiftStarts_per60",
+    "I_F_neutralZoneShiftStarts_per60",
+    "I_F_flyShiftStarts_per60",
+    "I_F_primaryAssists_per60",
+    "I_F_secondaryAssists_per60",
+    "I_F_goals_per60",
 ]
 
 # Drop stats we don't aggregate
 skaters_df = skaters_df[skaters_df.columns.intersection(interesting_stats)]
 
 # Write to file
-output_file = os.path.join(
-    dirname, '../../../data/interim/aggregated_forwards.csv')
+output_file = os.path.join(dirname, "../../../data/interim/aggregated_forwards.csv")
 skaters_df.to_csv(output_file)
-output_file = os.path.join(
-    dirname, '../../../data/final/aggregated_forwards.csv')
+output_file = os.path.join(dirname, "../../../data/final/aggregated_forwards.csv")
 skaters_df.to_csv(output_file)
