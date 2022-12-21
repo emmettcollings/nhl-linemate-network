@@ -1,0 +1,17 @@
+{
+    "playerId": "player_id",
+    "season": "season",
+    "team": "team",
+    "position": "position",
+    "situation": "situation",
+    "games_played": "games_played",
+    "icetime": "ice_time",
+    "shifts": "shifts",
+    "gameScore": "game_score",
+    "onIce_xGoalsPercentage": "on_ice_x_goals_percentage",
+    "offIce_xGoalsPercentage": "off_ice_x_goals_percentage",
+    "onIce_corsiPercentage": "on_ice_corsi_percentage",
+    "offIce_corsiPercentage": "off_ice_corsi_percentage",
+    "onIce_fenwickPercentage": "on_ice_fenwick_percentage",
+    "offIce_fenwickPercentage": ""
+} 
