@@ -1,17 +1,13 @@
-import pandas as pd
 import glob
 import os
-import numpy as np
-from numpy import int64
+
+import pandas as pd
 
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
 
 skaters_dir = os.path.join(dirname, '../../data/skaters/')
 skaters_files = glob.glob(skaters_dir + '*.csv')
-
-
-
 
 
 def format_skater_df(df):

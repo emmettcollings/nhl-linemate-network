@@ -1,8 +1,7 @@
-import pandas as pd
 import glob
 import os
-import numpy as np
-from numpy import int64
+
+import pandas as pd
 
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
