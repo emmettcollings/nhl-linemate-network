@@ -6,7 +6,7 @@ import pandas as pd
 dirname = os.path.dirname(__file__)
 
 # aggregate lines data
-lines_dir = os.path.join(dirname, '../../data/lines/')
+lines_dir = os.path.join(dirname, '../../raw_data/lines/')
 lines_files = glob.glob(lines_dir + '*.csv')
 
 
@@ -23,7 +23,7 @@ def format_lines_df(df):
     return df
 
 
-lines_file = os.path.join(dirname, '../../data/lines/21-22_lines.csv')
+lines_file = os.path.join(dirname, '../../raw_data/lines/21-22_lines.csv')
 lines_files.remove(lines_file)
 lines_df = pd.read_csv(lines_file, index_col='lineId', header=0)
 lines_df = format_lines_df(lines_df)
@@ -75,7 +75,7 @@ lines_df = lines_df.join(split_ids)
 
 # add full player names
 forwards_file = os.path.join(
-    dirname, '../../data/forwards/aggregate_forwards.csv')
+    dirname, '../../aggregated_data/forwards/aggregate_forwards.csv')
 forwards_df = pd.read_csv(forwards_file, index_col='playerId', header=0)
 lines_df['player1Name'] = lines_df.apply(
     lambda x: forwards_df.loc[int(x.playerId1)].playerName, axis=1)
@@ -86,5 +86,5 @@ lines_df['player3Name'] = lines_df.apply(
 
 # Write to file
 output_file = os.path.join(
-    dirname, '../../data/forwards/aggregate_lines.csv')
+    dirname, '../../aggregated_data/forwards/aggregate_lines.csv')
 lines_df.to_csv(output_file)

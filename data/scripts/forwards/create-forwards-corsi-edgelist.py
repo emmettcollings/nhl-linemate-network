@@ -7,9 +7,9 @@ from numpy import int64
 # Read our data into dataframes
 dirname = os.path.dirname(__file__)
 forwards_file = os.path.join(
-    dirname, '../../data/forwards/aggregate_forwards.csv')
+    dirname, '../../aggregated_data/forwards/aggregate_forwards.csv')
 forwards_df = pd.read_csv(forwards_file, index_col='playerId', header=0)
-lines_file = os.path.join(dirname, '../../data/forwards/aggregate_lines.csv')
+lines_file = os.path.join(dirname, '../../aggregated_data/forwards/aggregate_lines.csv')
 lines_df = pd.read_csv(lines_file, index_col='lineId', header=0)
 
 edgelist_df = pd.DataFrame(
@@ -127,5 +127,5 @@ for id in forwards_df.index:
 
 # save in new csv
 output_file = os.path.join(
-    dirname, '../../data/forwards/forwards_edgelist_corsi.csv')
+    dirname, '../../edgelists/forwards_edgelist_corsi.csv')
 edgelist_df.to_csv(output_file)
