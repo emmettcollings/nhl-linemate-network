@@ -1,3 +1,9 @@
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
+
 import glob
 import os
 
@@ -10,13 +16,15 @@ skaters_dir = os.path.join(dirname, "../../../data/raw/skaters/")
 skaters_files = glob.glob(skaters_dir + "*.csv")
 
 
-def format_skater_df(df):
-    situation = df[df["situation"] == "5on5"]
-    df = pd.DataFrame(situation)
+def format_skater_df(season_skaters_df):
+    situation = season_skaters_df[season_skaters_df["situation"] == "5on5"]
+    season_skaters_df = pd.DataFrame(situation)
     # drop position and team as they may change from season to season
-    df = df.drop(columns=["season", "team", "position", "situation"])
-    df = df.rename(columns={"name": "playerName"})
-    return df
+    season_skaters_df = season_skaters_df.drop(
+        columns=["season", "team", "position", "situation"]
+    )
+    season_skaters_df = season_skaters_df.rename(columns={"name": "playerName"})
+    return season_skaters_df
 
 
 # aggregate skater data over our time period
