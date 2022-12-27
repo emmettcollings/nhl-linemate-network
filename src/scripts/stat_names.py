@@ -1,76 +1,41 @@
-keys = [
-    "playerId",
-    "season",
-    "name",
-    "team",
-    "position",
-    "situation",
-    "games_played",
-    "icetime",
-    "shifts",
-    "gameScore",
-    "onIce_xGoalsPercentage",
-    "offIce_xGoalsPercentage",
-    "onIce_corsiPercentage",
-    "offIce_corsiPercentage",
-    "onIce_fenwickPercentage",
-    "offIce_fenwickPercentage",
-    "iceTimeRank",
-    "I_F_xOnGoal",
-    "I_F_xGoals",
-    "I_F_xRebounds",
-    "I_F_xFreeze",
-    "I_F_xPlayStopped",
-    "I_F_xPlayContinuedInZone",
-    "I_F_xPlayContinuedOutsideZone",
-    "I_F_flurryAdjustedxGoals",
-    "I_F_scoreVenueAdjustedxGoals",
-    "I_F_flurryScoreVenueAdjustedxGoals",
-    "I_F_primaryAssists",
-    "I_F_secondaryAssists",
-    "I_F_shotsOnGoal",
-    "I_F_missedShots",
-    "I_F_blockedShotAttempts",
-    "I_F_shotAttempts",
-    "I_F_points",
-    "I_F_goals",
-    "I_F_rebounds",
-    "I_F_reboundGoals",
-    "I_F_freeze",
-    "I_F_playStopped",
-    "I_F_playContinuedInZone",
-    "I_F_playContinuedOutsideZone",
-    "I_F_savedShotsOnGoal",
-    "I_F_savedUnblockedShotAttempts",
-    "penalties",
-    "I_F_penalityMinutes",
-    "I_F_faceOffsWon",
-    "I_F_hits",
-    "I_F_takeaways",
-    "I_F_giveaways",
-    "I_F_lowDangerShots",
-    "I_F_mediumDangerShots",
-    "I_F_highDangerShots",
-    "I_F_lowDangerxGoals",
-    "I_F_mediumDangerxGoals",
-    "I_F_highDangerxGoals",
-    "I_F_lowDangerGoals",
-    "I_F_mediumDangerGoals",
-    "I_F_highDangerGoals",
-    "I_F_scoreAdjustedShotsAttempts",
-    "I_F_unblockedShotAttempts",
-    "I_F_scoreAdjustedUnblockedShotAttempts",
-    "I_F_dZoneGiveaways",
-    "I_F_xGoalsFromxReboundsOfShots",
-    "I_F_xGoalsFromActualReboundsOfShots",
-    "I_F_reboundxGoals",
-    "I_F_xGoals_with_earned_rebounds",
-    "I_F_xGoals_with_earned_rebounds_scoreAdjusted",
-    "I_F_xGoals_with_earned_rebounds_scoreFlurryAdjusted",
-    "I_F_shifts",
-    "I_F_oZoneShiftStarts",
-    "I_F_dZoneShiftStarts",
-    "I_F_neutralZoneShiftStarts",
-    "I_F_flyShiftStarts",
-    "I_F_oZoneShiftStarts",
-]
+"""_summary_
+Reads
+"""
+
+import csv
+import os
+
+
+def to_snake_case(string: str):
+    """_summary_
+
+    Args:
+        string (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    print("Converting to snake case" + string)
+    snaked = string
+    return snaked
+
+
+dirname = os.path.dirname(__file__)
+skaters_file = os.path.join(dirname, "../../data/raw/skaters/21-22_skaters.csv")
+
+# Open the CSV file and read the contents
+with open(skaters_file, "r", encoding="utf-8") as f:
+    reader = csv.reader(f)
+
+    # Get the column labels from the first row
+    headers = next(reader)
+
+    # Create an empty dictionary
+    data = {}
+
+    # Iterate through the headers and translate to snake case
+    for stat in headers:
+        data[stat] = to_snake_case(stat)
+
+# The dictionary is now populated with the data from the CSV file
+print(data)
