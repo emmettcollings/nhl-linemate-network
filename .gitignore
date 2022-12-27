@@ -464,3 +464,4 @@ cython_debug/
 # customs
 *.lock
 *#
+.vscode
