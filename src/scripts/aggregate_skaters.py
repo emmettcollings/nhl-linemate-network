@@ -1,7 +1,12 @@
 """_summary_
+Aggregates the statistics of all players over all seasons, combining into one
+master file. Only 5v5 statistics are considered, and teams and positions are
+dropped as they are subject to change between seasons.
 
-Returns:
-    _type_: _description_
+Inputs:
+    data/raw/skaters/: Iterates over all csvs in this data folder.
+Outputs:
+    aggregated_skaters.csv: All skaters' data over our time period.
 """
 
 import glob
