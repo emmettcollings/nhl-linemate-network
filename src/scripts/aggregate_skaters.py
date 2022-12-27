@@ -12,11 +12,20 @@ import pandas as pd
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
 
-skaters_dir = os.path.join(dirname, "../../../data/raw/skaters/")
+skaters_dir = os.path.join(dirname, "../../data/raw/skaters/")
 skaters_files = glob.glob(skaters_dir + "*.csv")
+print(skaters_files)
 
 
 def format_skater_df(season_skaters_df):
+    """_summary_
+
+    Args:
+        season_skaters_df (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     situation = season_skaters_df[season_skaters_df["situation"] == "5on5"]
     season_skaters_df = pd.DataFrame(situation)
     # drop position and team as they may change from season to season
@@ -28,16 +37,22 @@ def format_skater_df(season_skaters_df):
 
 
 # aggregate skater data over our time period
-skater_file = os.path.join(dirname, "../../../data/raw/skaters/21-22_skaters.csv")
+skater_file = os.path.join(dirname, "../../data/raw/skaters/21-22_skaters.csv")
 skaters_files.remove(skater_file)
 skaters_df = pd.read_csv(skater_file, index_col="playerId", header=0)
 skaters_df = format_skater_df(skaters_df)
 
-print(skaters_files)
 
-
-# combines current player row with dataframe
+# combines current player row with data frame
 def add_player_data(player_row):
+    """_summary_
+
+    Args:
+        player_row (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     player_id = player_row.name
     if player_row.name in skaters_df.index:
         updated_row = skaters_df.loc[player_id]
@@ -226,7 +241,7 @@ interesting_stats = [
 skaters_df = skaters_df[skaters_df.columns.intersection(interesting_stats)]
 
 # Write to file
-output_file = os.path.join(dirname, "../../../data/interim/aggregated_skaters.csv")
+output_file = os.path.join(dirname, "../../data/interim/aggregated_skaters.csv")
 skaters_df.to_csv(output_file)
-output_file = os.path.join(dirname, "../../../data/final/aggregated_skaters.csv")
+output_file = os.path.join(dirname, "../../data/final/aggregated_skaters.csv")
 skaters_df.to_csv(output_file)
