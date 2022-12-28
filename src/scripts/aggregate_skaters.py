@@ -1,4 +1,5 @@
-"""_summary_
+"""Aggregates all skaters.
+
 Aggregates the statistics of all players over all seasons, combining into one
 master file. Only 5v5 statistics are considered, and teams and positions are
 dropped as they are subject to change between seasons.
@@ -13,6 +14,12 @@ import glob
 import os
 
 import pandas as pd
+
+from stat_names import get_stat_dict
+
+stat_list = get_stat_dict()
+print(stat_list)
+
 
 # Read all players from skaters.csv files
 dirname = os.path.dirname(__file__)
