@@ -11,10 +11,10 @@ import json
 
 
 def get_dirs():
-    """_summary_
+    """Returns file names of stat json dump and skaters file
 
     Returns:
-        _type_: _description_
+        2 strings: stat_file, skaters_file
     """
 
     dirname = os.path.dirname(__file__)
@@ -54,10 +54,10 @@ def get_stat_dict():
 
 
 def write_stat_list():
-    """_summary_
+    """Read stat names from skater csv, write dict with snake case to json file
 
-    Returns:
-        _type_: _description_
+    Outputs:
+        .json: json dump of dict
     """
 
     stat_file, skaters_file = get_dirs()

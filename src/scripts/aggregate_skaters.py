@@ -18,7 +18,6 @@ import pandas as pd
 from stat_names import get_stat_dict
 
 stat_list = get_stat_dict()
-print(stat_list)
 
 
 # Read all players from skaters.csv files
