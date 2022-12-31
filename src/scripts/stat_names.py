@@ -82,6 +82,11 @@ def write_stat_list():
     return stat_dict
 
 
+def write_stat_categories():
+    """Writes stat categories for easier aggregation later"""
+    print("Writing stat categories.")
+
+
 # The dictionary is now populated with the data from the CSV file
 data = write_stat_list()
 print(data)
